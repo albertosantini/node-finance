@@ -184,7 +184,7 @@ It retrieves the risk free rate from Yahoo! Finance.
 
 **Callback response**
 
-    - *riskfree* risk free rate.
+- *riskfree* risk free rate.
 
 
 performances.getPerformances(x, weights)
@@ -233,15 +233,16 @@ It configure CRM database instance (i.e. a CouchDB instance).
 The user can configure a testing and live instance.
 
 **Params**
-    - *liveDomain* url for the live domain.
 
-    - *keylive* "user:password" string, credentials for live instance.
+- *liveDomain* url for the live domain.
 
-    - *dbLive* name of live instance.
+- *keylive* "user:password" string, credentials for live instance.
 
-    - *keyTesting* "user:password" string, credentials for testing instance.
+- *dbLive* name of live instance.
 
-    - *dbTesting* name of testing instance.
+- *keyTesting* "user:password" string, credentials for testing instance.
+
+- *dbTesting* name of testing instance.
 
 crm.putPortfolioOnCRM(params, callback)
 ---------------------
@@ -250,25 +251,25 @@ It saves a portfolio and his stats to CRM database.
 
 **Params**
 
-    - *symbols* portfolio assets.
+- *symbols* portfolio assets.
 
-    - *weights* weights of the portfolio assets.
+- *weights* weights of the portfolio assets.
 
-    - *ref* reference date (string).
+- *ref* reference date (string).
 
-    - *ret*  target return of the portfolio.
+- *ret*  target return of the portfolio.
 
-    - *risk* risk of the portofolio.
+- *risk* risk of the portofolio.
 
-    - *perf* performances vector.
+- *perf* performances vector.
 
-    - *highs* high constraints.
+- *highs* high constraints.
 
-    - *lows* low constraints.
+- *lows* low constraints.
 
 **Response callback**
 
-    - *id* id of the portfolio saved.
+- *id* id of the portfolio saved.
 
 crm.getPortfolioCount(callback)
 ---------------------
