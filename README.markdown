@@ -23,7 +23,7 @@ Tested with node 0.4.12 and tested results with R 2.13.1.
 Notes
 =====
 
-- Before using crm methods, you need to configure the details of the persistence
+Before using crm methods, you need to configure the details of the persistence
 system. The portfolios are saved on a CouchDB instance. The configuration
 allows a live and testing system.
 
@@ -35,7 +35,7 @@ allows a live and testing system.
         dbTesting: "myTestingDBName",
     });
 
-- If you use crm module, in lib/couchdb there is the file containing the code 
+If you use crm module, in lib/couchdb there is the file containing the code 
 for the views to inject to CouchDB instance.
 
 Methods
@@ -300,7 +300,7 @@ crm.getMostUsedAssets(callback)
 
 
 
-crm.getLastCreatedPortfolios(limit, callback) {
+crm.getLastCreatedPortfolios(limit, callback)
 ----------------------------
 
 It retrieves the latest portofolios created.
@@ -338,28 +338,28 @@ It retrieves the latest portofolios created.
             - *highBounds* vector containing high constraints.
 
 
-crm.getHighProfileRiskPortfolios(limit, callback) {
+crm.getHighProfileRiskPortfolios(limit, callback)
 --------------------------------
 
 It retrieves the portfolios with high profile risk.
 
 For arguments and response callback see getLastCreatedPortofolios method.
 
-crm.getLowProfileRiskPortfolios(limit, callback) {
+crm.getLowProfileRiskPortfolios(limit, callback)
 -------------------------------
 
 It retrieves the portfolios with low profile risk.
 
 For arguments and response callback see getLastCreatedPortofolios method.
 
-crm.getHighProfileReturnPortfolios(limit, callback) {
+crm.getHighProfileReturnPortfolios(limit, callback)
 ----------------------------------
 
 It retrieves the portfolios with high profile return.
 
 For arguments and response callback see getLastCreatedPortofolios method.
 
-crm.getLowProfileReturnPortfolios(limit, callback) {
+crm.getLowProfileReturnPortfolios(limit, callback)
 ------------------------------------------
 
 It retrieves the portfolios with low profile return.
