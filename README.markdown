@@ -29,10 +29,11 @@ allows a live and testing system.
 
     finance.crm.configure({
         liveDomain: "x.x.x",
-        keylive: "user:password",
-        dbLive: "myLiveDBName",
-        keyTesting: "user:password",
-        dbTesting: "myTestingDBName",
+        liveUrl: "http://key1:pass1@p.c.com",
+        liveDb: "myLiveDBName",
+        testingUrl: "http://key2:pass2@p.c.com",
+        testingDb: "myTestingDBName",
+        design: "designName",
     });
 
 If you use crm module, in lib/couchdb there is the file containing the code 
