@@ -42,28 +42,29 @@ for the views to inject to CouchDB instance.
 Methods
 =======
 
-portfolio.getOptimalPortfolio(params, callback)
+portfolio.getOptimalPortfolio(params, callback, config)
 -----------------------------
 
-It creates an optimal portfolio.
+It creates an optimal portfolio. If *config* is defined, the method call a 
+Rserve instance, otherwise a native implementation is used.
 
 **Params**
 
 - *prods* vector of symbols.
 
-- *referenceDate*
+- *referenceDate* reference date (String).
 
-- *targetReturn* if undefined, the mean of returns will be the default
+- *targetReturn* weekly target return, if undefined, the mean of returns.
 
-- *lows* constraints
+- *lows* vector of constraints.
 
-- *highs* constraints
+- *highs* vector of constraints.
 
 **Callback response**
 
 - *perf* performances vector.
 
-- *message* error message, empty is ok.
+- *message* error message, if empty the optimization is fine.
 
 - *optim* details of quadprog response.
 
@@ -77,12 +78,21 @@ It creates an optimal portfolio.
 
     - *iact* vector with the indices of the active constraints at the solution.
 
-    - *message* error message, empty is ok.
+    - *message* error message, if empty the optimization is fine.
 
-    - *pm* return
+    - *pm* portfolio return.
 
-    - *ps* risk
+    - *ps* portfolio risk.
 
+**Config**
+
+- *host* hostname or ip address of R instance.
+
+- *port* port of Rserve instance.
+
+- *user* username for remote connection of Rserve instance.
+
+- *password* password for remote connection of Rserve instance.
 
 portfolio.getQuotesFromYahoo(symbol, refDate, callback)
 ----------------------------
