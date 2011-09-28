@@ -247,13 +247,15 @@ The user can configure a testing and live instance.
 
 - *liveDomain* url for the live domain.
 
-- *keylive* "user:password" string, credentials for live instance.
+- *liveUrl* url for the live instance, eventually with the credentials.
 
-- *dbLive* name of live instance.
+- *liveDb* name of live instance.
 
-- *keyTesting* "user:password" string, credentials for testing instance.
+- *testingUrl* url for the testing instance, eventually with the credentials
 
-- *dbTesting* name of testing instance.
+- *testingDb* name of testing instance.
+
+- *design* name of design document.
 
 crm.putPortfolioOnCRM(params, callback)
 ---------------------
