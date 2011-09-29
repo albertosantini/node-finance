@@ -3,13 +3,15 @@ FINANCE
 
 This module contains an implementation of Markowitz algorithm for the portfolio
 optimization, a routine for retrieving historical prices from Yahoo,
-statistical information for stocks and a routine for calculating options
-smile using Black and Scholes formula.
+statistical information for stocks and a routine for calculating implied
+volatility using Black and Scholes formula.
 
 Example
 ========
 
 See examples directory.
+
+For a frontend, see [node-conpa](http://github.com/albertosantini/node-conpa).
 
 Installation
 ============
@@ -18,14 +20,14 @@ To install with [npm](http://github.com/isaacs/npm):
 
     npm install finance
 
-Tested with node 0.4.12 and tested results with R 2.13.1.
+Tested with node 0.4.12, R 2.13.1 and Rserve 0.6.5.
 
 Notes
 =====
 
 Before using crm methods, you need to configure the details of the persistence
 system. The portfolios are saved on a CouchDB instance. The configuration
-allows a live and testing system.
+allows a live and testing environment.
 
     finance.crm.configure({
         liveDomain: "x.x.x",
@@ -45,7 +47,7 @@ Methods
 portfolio.getOptimalPortfolio(params, callback, config)
 -----------------------------
 
-It creates an optimal portfolio. If *config* is defined, the method call a 
+It creates an optimal portfolio. If *config* is defined, the method call a
 Rserve instance, otherwise a native implementation is used.
 
 **Params**
@@ -251,7 +253,7 @@ The user can configure a testing and live instance.
 
 - *liveDb* name of live instance.
 
-- *testingUrl* url for the testing instance, eventually with the credentials
+- *testingUrl* url for the testing instance, eventually with the credentials.
 
 - *testingDb* name of testing instance.
 
