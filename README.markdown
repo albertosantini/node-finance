@@ -38,7 +38,7 @@ allows a live and testing environment.
         design: "designName",
     });
 
-If you use crm module, in lib/couchdb there is the file containing the code 
+If you use crm module, in lib/couchdb there is the file containing the code
 for the views to inject to CouchDB instance.
 
 Methods
@@ -96,7 +96,7 @@ Rserve instance, otherwise a native implementation is used.
 
 - *password* password for remote connection of Rserve instance.
 
-portfolio.getQuotesFromYahoo(symbol, refDate, callback)
+quotes.getQuotesFromYahoo(symbol, refDate, callback)
 ----------------------------
 
 It retrieves the prices from Yahoo! finance.
@@ -120,7 +120,7 @@ It retrieves the prices from Yahoo! finance.
     - *afterRefDate* CSV string of prices after reference date.
 
 
-portfolio.getReturns(symbols, refDate, callback)
+quotes.getReturns(symbols, refDate, callback)
 --------------------
 
 It retrieves the prices from Yahoo! finance and calculates the log returns of
@@ -142,7 +142,7 @@ the close prices.
 
     - *afterRefDate* vector of log returns of close prices after reference date.
 
-portfolio.getKeyStatistics(params, callback)
+quotes.getKeyStatistics(params, callback)
 --------------------------
 
 It retrieves the key statistics for the stocks and returns an array of objects
@@ -164,7 +164,7 @@ to create an uneditable form on front-end side.
 
         - *value* the value of the field.
 
-portfolio.getOptionChainFromYahoo(symbol, callback)
+quotes.getOptionChainFromYahoo(symbol, callback)
 ---------------------------------
 
 It retrieves the strike values for calls and puts from Yahoo! Finance.
@@ -190,7 +190,7 @@ It retrieves the strike values for calls and puts from Yahoo! Finance.
     - *puts* vector of put values.
 
 
-portfolio.getRiskFreeRateFromYahoo(callback)
+quotes.getRiskFreeRateFromYahoo(callback)
 ----------------------------------
 
 It retrieves the risk free rate from Yahoo! Finance.
