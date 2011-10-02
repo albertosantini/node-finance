@@ -96,6 +96,17 @@ Rserve instance, otherwise a native implementation is used.
 
 - *password* password for remote connection of Rserve instance.
 
+portfolio.getScriptOptimalPortfolio(params, callback)
+-----------------------------------
+
+It retrieves the source code of the R script calculating the optimal portfolio.
+
+**Params** See portfolio.getOptimalPortfolio.
+
+**Callback response**
+
+- *source* the source code of the script.
+
 quotes.getQuotesFromYahoo(symbol, refDate, callback)
 ----------------------------
 

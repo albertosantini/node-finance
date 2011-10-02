@@ -1,7 +1,12 @@
+1.2.4 / 2011-10-02
+==================
+
+* Added portfolio.getScriptOptimalPortfolio.
+
 1.2.3 / 2011-10-01
 ==================
 
-* Added defaultDocumentFeatures to the jsdom.
+* Added defaultDocumentFeatures to the jsdom in quotes methods.
 * Fixed quotes methods signature in the doc.
 * Added options example.
 
