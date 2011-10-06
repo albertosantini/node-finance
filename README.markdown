@@ -38,8 +38,8 @@ allows a live and testing environment.
         design: "designName",
     });
 
-If you use crm module, in lib/couchdb there is the file containing the code
-for the views to inject to CouchDB instance.
+In the support directory there is a script to install the design document with
+the views used in the dashboard tab.
 
 Methods
 =======
@@ -253,7 +253,7 @@ formula.
 crm.configure(params)
 -------------
 
-It configure CRM database instance (i.e. a CouchDB instance).
+It configures a CRM database instance (i.e. a CouchDB instance).
 The user can configure a testing and live instance.
 
 **Params**
