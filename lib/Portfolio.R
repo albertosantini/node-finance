@@ -40,6 +40,7 @@ getReturns <- function (symbol, refDate) {
     end = paste(yyRef, mmRef, ddRef, sep="-");
     retsBefore = getLogReturns(symbol, start, end);
 
+    retsAfter = NULL
     if (ddNow != ddRef || mmNow != mmRef || yyNow != yyRef) {
         start = paste(yyRef, mmRef, ddRef, sep="-");
         end = paste(yyNow, mmNow, ddNow, sep="-");
@@ -82,7 +83,9 @@ getOptimalPortfolio <- function (jsonObj) {
         res$optim <- list()
     } else {
         res$message <- ""
-        res$perf <- cumsum(p %*% res$optim$pw) # performances calc
+        if (length(res$perf)) {
+            res$perf <- cumsum(p %*% res$optim$pw) # performances calc
+        }
     }
 
     return(toJSON(res))
