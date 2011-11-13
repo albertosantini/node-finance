@@ -1,3 +1,8 @@
+1.2.5 / 2011-11-13
+==================
+
+* Fixed performance calc when reference date is today.
+
 1.2.4 / 2011-10-02
 ==================
 
