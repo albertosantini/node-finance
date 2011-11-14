@@ -96,6 +96,8 @@ Rserve instance, otherwise a native implementation is used.
 
 - *password* password for remote connection of Rserve instance.
 
+- *debug* boolean to enable rio logging.
+
 portfolio.getScriptOptimalPortfolio(params, callback)
 -----------------------------------
 

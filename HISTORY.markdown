@@ -1,3 +1,10 @@
+1.2.6 / 2011-11-14
+==================
+
+* Added debug flag in rserve configuration,
+* Fixed if there are not prices after the reference date; it happens when the
+start and the end date are too close.
+
 1.2.5 / 2011-11-13
 ==================
 
