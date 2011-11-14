@@ -17,11 +17,14 @@ hackZeroes <- function (x) {
 }
 
 getLogReturns <- function (symbol, start, end) {
-    assetPrice <- coredata(get.hist.quote(symbol,
-        start=start, end=end,
+    prices = try(get.hist.quote(symbol, start=start, end=end,
         compression="w", quote="Close", quiet=TRUE))
-    assetPrice <- hackZeroes(assetPrice)
-    assetReturns <- diff(log(assetPrice[1:(length(assetPrice)-1)]))
+    if (class(prices) == "try-error") {
+        assetReturns = NULL
+    } else {
+        assetPrice <- hackZeroes(coredata(prices))
+        assetReturns <- diff(log(assetPrice[1:(length(assetPrice)-1)]))
+    }
 
     assetReturns
 }
@@ -36,15 +39,15 @@ getReturns <- function (symbol, refDate) {
     mmRef = format(refDate, "%m")
     yyRef = format(refDate, "%Y")
 
-    start = paste(as.numeric(yyRef) - 2, mmRef, ddRef, sep="-");
-    end = paste(yyRef, mmRef, ddRef, sep="-");
-    retsBefore = getLogReturns(symbol, start, end);
+    start = paste(as.numeric(yyRef) - 2, mmRef, ddRef, sep="-")
+    end = paste(yyRef, mmRef, ddRef, sep="-")
+    retsBefore = getLogReturns(symbol, start, end)
 
     retsAfter = NULL
     if (ddNow != ddRef || mmNow != mmRef || yyNow != yyRef) {
-        start = paste(yyRef, mmRef, ddRef, sep="-");
-        end = paste(yyNow, mmNow, ddNow, sep="-");
-        retsAfter = getLogReturns(symbol, start, end);
+        start = paste(yyRef, mmRef, ddRef, sep="-")
+        end = paste(yyNow, mmNow, ddNow, sep="-")
+        retsAfter = getLogReturns(symbol, start, end)
     }
 
     list(beforeRefDate=retsBefore, afterRefDate=retsAfter)
@@ -63,7 +66,7 @@ getOptimalPortfolio <- function (jsonObj) {
     highs <- as.numeric(o$highs) * -1
 
     for (asset in symbols) {
-        rets = getReturns(asset, referenceDate);
+        rets = getReturns(asset, referenceDate)
         x <- cbind(x, rets$beforeRefDate)
         if (length(rets$afterRefDate)) {
             p <- cbind(p, rets$afterRefDate)
