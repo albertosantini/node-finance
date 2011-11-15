@@ -86,7 +86,7 @@ getOptimalPortfolio <- function (jsonObj) {
         res$optim <- list()
     } else {
         res$message <- ""
-        if (length(res$perf)) {
+        if (!is.null(p)) {
             res$perf <- cumsum(p %*% res$optim$pw) # performances calc
         }
     }

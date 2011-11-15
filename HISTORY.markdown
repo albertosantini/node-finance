@@ -1,3 +1,9 @@
+1.2.7 / 2011-11-15
+==================
+
+* Fixed again performance calc in Portfolio.R.
+* Updated rio 0.5.2.
+
 1.2.6 / 2011-11-14
 ==================
 
