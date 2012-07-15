@@ -1,3 +1,8 @@
+1.2.13 / 2012-07-15
+==================
+
+* Removed jsdom dependency and updated modules.
+
 1.2.12 / 2012-04-03
 ==================
 
