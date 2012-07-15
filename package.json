@@ -12,13 +12,12 @@
            "url": "http://github.com/albertosantini/node-finance/raw/master/LICENSE"
         }
     ],
-    "engines" : { "node" : ">=0.4.x" },
+    "engines" : { "node" : ">=0.6.x" },
     "dependencies" : {
-        "quadprog" : ">=1.0.2",
-        "request" : ">=2.9.153",
-        "jsdom" : ">=0.2.13",
-        "jquery" : ">=1.6.3",
-        "rio" : ">=0.6.0"
+        "quadprog" : "1.0.2",
+        "request" : "2.9.203",
+        "jquery" : "1.7.3",
+        "rio" : "0.6.1"
     }
 }
 
