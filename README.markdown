@@ -299,6 +299,37 @@ It saves a portfolio and his stats to CRM database.
 
 - *id* id of the portfolio saved.
 
+crm.getPortfolio(params, callback)
+---------------------
+
+It retrieves a portfolio.
+
+**Params**
+
+- *id* portfolio id.
+
+**Response callback**
+
+- *assets* portfolio assets.
+
+- *constraints* portfolio constraints.
+
+    - *highs* high constraints.
+
+    - *lows* low constraints.
+
+- *created_at* creation date of the portfolio.
+
+- *perf* performances vector.
+
+- *ref* reference date (string).
+
+- *ret*  target return of the portfolio.
+
+- *risk* risk of the portofolio.
+
+- *weights* weights of the portfolio assets.
+
 crm.getPortfolioCount(callback)
 ---------------------
 

@@ -1,7 +1,7 @@
 {
     "name" : "finance",
     "description" : "Module for portfolio optimization, prices and options",
-    "version" : "1.2.13",
+    "version" : "1.3.0",
     "main" : "index",
     "repository" : "http://github.com/albertosantini/node-finance",
     "keywords": ["finance", "portfolio", "optimization", "yahoo"],
