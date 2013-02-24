@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/albertosantini/node-finance.png)](http://travis-ci.org/albertosantini/node-finance)
 FINANCE
 =======
 
