@@ -1,0 +1,28 @@
+// https://github.com/jquery/jquery/blob/master/.jshintrc
+
+{
+    "curly": true,
+    "eqeqeq": true,
+    "latedef": true,
+    "noarg": true,
+    "noempty": true,
+    "quotmark": "double",
+    "undef": true,
+    "unused": true,
+    "strict": true,
+    "trailing": true,
+
+    "node": true,
+
+    // my options
+    "bitwise": true,
+    "forin": true,
+    "indent": 4,
+    "maxlen": 80,
+    "nomen": true,
+    "onevar": true,
+    "plusplus": true,
+    "regexp": true,
+    "white": true
+}
+

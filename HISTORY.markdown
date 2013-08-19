@@ -1,3 +1,9 @@
+1.4.0 / 2013-04-??
+==================
+
+* Add Travis tests.
+* Add error parameter to the callbacks.
+
 1.3.1 / 2012-11-27
 ==================
 

@@ -1,13 +1,14 @@
-/*jslint node:true, sloppy:true */
+"use strict";
 
 var util = require("util"),
-    finance = require("../lib/finance");
+    riskFreeRate = require("../lib/risk-free-rate"),
+    optionChain = require("../lib/option-chain");
 
-finance.quotes.getRiskFreeRateFromYahoo(function (res) {
+riskFreeRate.getRiskFreeRateFromYahoo(function (err, res) {
     console.log("Risk Free Rate (3 months): " + res);
 });
 
-finance.quotes.getOptionChainFromYahoo("IBM", function (res) {
+optionChain.getOptionChainFromYahoo("IBM", function (err, res) {
     console.log("Strike: " + res.strike);
     console.log("Expire Date: " + res.expDateStr);
     console.log("First call: " + util.inspect(res.calls[0]));

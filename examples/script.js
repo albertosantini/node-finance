@@ -1,7 +1,8 @@
-/*jslint node:true, sloppy:true */
+/*jshint node:true */
 
-var util = require("util"),
-    finance = require("../lib/finance");
+"use strict";
+
+var finance = require("../lib/finance");
 
 var params = {};
 
@@ -11,7 +12,11 @@ params.targetReturn = undefined;
 params.lows = [0, 0, 0];
 params.highs = [-1, -1, -1];
 
-finance.portfolio.getScriptOptimalPortfolio(params, function (script) {
-    console.log(script);
+finance.portfolio.getScriptOptimalPortfolio(params, function (err, script) {
+    if (!err) {
+        console.log(script);
+    } else {
+        console.log("Failed to load the script:", err);
+    }
 });
 

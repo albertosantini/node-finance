@@ -1,4 +1,6 @@
-/*jslint node:true, sloppy:true */
+/*jshint node:true */
+
+"use strict";
 
 var assert = require("assert"),
     finance = require("../lib/finance");
@@ -11,10 +13,10 @@ params.targetReturn = undefined;
 params.lows = [0, 0, 0];
 params.highs = [-1, -1, -1];
 
-finance.portfolio.getOptimalPortfolio(params, function (res) {
+finance.portfolio.getOptimalPortfolio(params, function (err, res) {
     var i;
 
-    if (res.message === "") {
+    if (!err) {
         console.log("Portfolio assets are the following: " + params.prods);
         for (i = 0; i < params.prods.length; i += 1) {
             console.log("Optimal weight for " + params.prods[i] +

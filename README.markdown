@@ -1,5 +1,6 @@
 FINANCE
 =======
+[![Build Status](https://travis-ci.org/albertosantini/node-finance.png)](https://travis-ci.org/albertosantini/node-finance)
 
 This module contains an implementation of Markowitz algorithm for the portfolio
 optimization, a routine for retrieving historical prices from Yahoo,
@@ -20,7 +21,7 @@ To install with [npm](http://github.com/isaacs/npm):
 
     npm install finance
 
-Tested with node 0.4.12, R 2.13.1 and Rserve 0.6.5.
+Tested with node 0.10.3, R 2.13.1 and Rserve 0.6.5.
 
 Notes
 =====
