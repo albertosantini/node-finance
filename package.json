@@ -24,7 +24,6 @@
     },
     "dependencies": {
         "cheerio": "~0.12.1",
-        "jquery": "~1.8.3",
         "quadprog": "~1.0.3",
         "request": "~2.27.0",
         "rio": "~0.10.0"
