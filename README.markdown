@@ -1,7 +1,7 @@
 FINANCE
 =======
 [![Build Status](https://travis-ci.org/albertosantini/node-finance.png)](https://travis-ci.org/albertosantini/node-finance)
-[![NPM version](https://badge.fury.io/js/node-finance.png)](http://badge.fury.io/js/node-finance)
+[![NPM version](https://badge.fury.io/js/finance.png)](http://badge.fury.io/js/finance)
 [![NGN Dependencies](https://david-dm.org/albertosantini/node-finance.png)](https://david-dm.org/albertosantini/node-finance)
 
 This module contains an implementation of Markowitz algorithm for the portfolio
