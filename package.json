@@ -23,13 +23,13 @@
         "node": ">=0.8.x"
     },
     "dependencies": {
-        "quadprog": "1.x",
-        "request": "2.x",
-        "jquery": "1.x",
-        "rio": "0.x"
+        "cheerio": "~0.12.1",
+        "jquery": "~1.8.3",
+        "quadprog": "~1.0.3",
+        "request": "~2.16.6",
+        "rio": "~0.7.0"
     },
     "devDependencies": {
        "vows": "~0.7.0"
     }
 }
-
