@@ -14,9 +14,9 @@ vows.describe("Option Chain tests").addBatch({
             assert.ok(isFinite(topic.strike));
         },
 
-        // "expire date": function (topic) {
-        //     assert.ok(isFinite(topic.calls[0]));
-        // },
+        "expire date": function (topic) {
+            assert.ok(topic.expDate.toString() !== "Invalid Date");
+        },
 
         "first call strike is a number": function (topic) {
             assert.ok(isFinite(topic.calls[0].strike));
