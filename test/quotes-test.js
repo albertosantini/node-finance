@@ -13,8 +13,10 @@ vows.describe("Quotes tests").addBatch({
         },
 
         "check quotes with ref date in the past": function (err, quotes) {
-            if (!err) {
-            }
+            assert.ok(!err && quotes[0].beforeRefDate.length > 0);
+            assert.ok(!err && quotes[0].afterRefDate.length > 0);
+            assert.ok(!err && (quotes[0].beforeRefDate.length ===
+                quotes[0].beforeRefDate.length));
         }
     },
 
@@ -24,8 +26,8 @@ vows.describe("Quotes tests").addBatch({
         },
 
         "check quotes": function (err, quotes) {
-            if (!err) {
-            }
+            assert.ok(!err && quotes[0].beforeRefDate.length > 0);
+            assert.ok(!err && quotes[0].afterRefDate.length === 0);
         }
     }
 
