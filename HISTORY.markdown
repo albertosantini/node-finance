@@ -17,22 +17,22 @@
 * Added getPortfolio by id.
 
 1.2.13 / 2012-07-15
-==================
+===================
 
 * Removed jsdom dependency and updated modules.
 
 1.2.12 / 2012-04-03
-==================
+===================
 
 * Fixed html scraping for option figures.
 
 1.2.11 / 2011-11-20
-==================
+===================
 
 * Updated node-rio 0.6.0.
 
 1.2.10 / 2011-11-17
-==================
+===================
 
 * Updated rio 0.5.6.
 
