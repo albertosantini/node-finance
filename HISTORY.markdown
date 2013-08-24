@@ -1,13 +1,15 @@
-1.4.0 / 2013-04-??
+2.0.0 / 2013-08-??
 ==================
 
-* Add Travis tests.
-* Add error parameter to the callbacks.
+* Removed jQuery dependency: replaced with cheerio.
+* Refactored apis, adding error parameter to the callbacks.
+* Added Travis tests.
+* Added npm and dependencies badges.
 
 1.3.1 / 2012-11-27
 ==================
 
-* Update module dependencies.
+* Updated module dependencies.
 
 1.3.0 / 2012-07-28
 ==================
