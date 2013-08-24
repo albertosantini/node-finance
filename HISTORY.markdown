@@ -1,4 +1,4 @@
-2.0.0 / 2013-08-??
+2.0.0 / 2013-08-24
 ==================
 
 * Removed jQuery dependency: replaced with cheerio.
