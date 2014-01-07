@@ -23,7 +23,7 @@
         "node": ">=0.8.x"
     },
     "dependencies": {
-        "cheerio": "~0.12.4",
+        "cheerio": "~0.13.1",
         "quadprog": "~1.0.3",
         "request": "~2.30.0",
         "rio": "~1.2.0"
