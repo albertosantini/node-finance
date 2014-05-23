@@ -64,14 +64,15 @@ to create an uneditable form on front-end side.
     - *label* the label of the field.
     - *value* the value of the field.
 
-optionchain.getOptionChainFromYahoo(symbol, callback)
+optionchain.getOptionChainFromYahoo(params, callback)
 ---------------------------------
 
 It retrieves the strike values for calls and puts from Yahoo! Finance.
 
-**Arguments**
+**Params**
 
 - *symbol* asset symbol.
+- *expiration* expiration month. Has to be in the form: "YYYY-MM", example: "2016-01".
 
 **Callback response**
 
