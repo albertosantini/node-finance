@@ -1,4 +1,4 @@
-2.1.0 / 2014-05-23
+2.1.1 / 2014-05-23
 ==================
 
 * optionchain.getOptionChainFromYahoo: allow setting expiration date (@theosp).
