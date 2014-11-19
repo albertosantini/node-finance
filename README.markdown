@@ -72,7 +72,7 @@ It retrieves the strike values for calls and puts from Yahoo! Finance.
 **Params**
 
 - *symbol* asset symbol.
-- *expiration* expiration month. Has to be in the form: "YYYY-MM", example: "2016-01".
+- *expiration* expiration month. Has to be in the form: "YYYY-MM-DD", example: "2016-01-03".
 
 **Callback response**
 
