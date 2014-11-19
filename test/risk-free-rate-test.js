@@ -16,5 +16,3 @@ vows.describe("Risk free rate tests").addBatch({
     }
 
 }).export(module);
-
-

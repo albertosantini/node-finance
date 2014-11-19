@@ -13,19 +13,31 @@ vows.describe("Option Chain tests").addBatch({
         },
 
         "strike is a number": function (err, topic) {
+            if (err) {
+                throw err;
+            }
             assert.ok(isFinite(topic.strike));
         },
 
         "expire date": function (err, topic) {
+            if (err) {
+                throw err;
+            }
             expiration = topic.expDate.toString();
             assert.ok(expiration !== "Invalid Date");
         },
 
         "first call strike is a number": function (err, topic) {
+            if (err) {
+                throw err;
+            }
             assert.ok(isFinite(topic.calls[0].strike));
         },
 
         "first put strike is a number": function (err, topic) {
+            if (err) {
+                throw err;
+            }
             assert.ok(isFinite(topic.puts[0].strike));
         },
 
@@ -42,18 +54,30 @@ vows.describe("Option Chain tests").addBatch({
             },
 
             "strike is a number": function (err, topic) {
+                if (err) {
+                    throw err;
+                }
                 assert.ok(isFinite(topic.strike));
             },
 
             "expire date": function (err, topic) {
+                if (err) {
+                    throw err;
+                }
                 assert.ok(topic.expDate.toString() !== "Invalid Date");
             },
 
             "first call strike is a number": function (err, topic) {
+                if (err) {
+                    throw err;
+                }
                 assert.ok(isFinite(topic.calls[0].strike));
             },
 
             "first put strike is a number": function (err, topic) {
+                if (err) {
+                    throw err;
+                }
                 assert.ok(isFinite(topic.puts[0].strike));
             }
         }

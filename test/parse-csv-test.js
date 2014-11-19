@@ -34,5 +34,3 @@ vows.describe("CSV tests").addBatch({
     }
 
 }).export(module);
-
-
