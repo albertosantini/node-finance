@@ -1,3 +1,10 @@
+2.3.0 / 2014-11-19
+==================
+
+* Fix eslint errors.
+* Fix option methods due to YAHOO changes.
+* Update cheerio 0.18.0, request 2.48.0, vows 0.8.0, rio 1.3.1.
+
 2.2.0 / 2014-06-07
 ==================
 
