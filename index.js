@@ -1,1 +1,1 @@
-module.exports = require('./lib/finance');
+module.exports = require("./lib/finance");
