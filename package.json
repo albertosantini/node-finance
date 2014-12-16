@@ -25,7 +25,7 @@
     "dependencies": {
         "cheerio": "~0.18.0",
         "quadprog": "~1.1.0",
-        "request": "~2.49.0",
+        "request": "~2.51.0",
         "rio": "~1.4.0"
     },
     "devDependencies": {
