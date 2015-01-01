@@ -12,11 +12,11 @@ vows.describe("Quotes tests").addBatch({
                 this.callback);
         },
 
-        "check quotes with ref date in the past": function (err, quotes) {
-            assert.ok(!err && quotes[0].beforeRefDate.length > 0);
-            assert.ok(!err && quotes[0].afterRefDate.length > 0);
-            assert.ok(!err && (quotes[0].beforeRefDate.length ===
-                quotes[0].beforeRefDate.length));
+        "check quotes with ref date in the past": function (err, qs) {
+            assert.ok(!err && qs[0].beforeRefDate.length > 0);
+            assert.ok(!err && qs[0].afterRefDate.length > 0);
+            assert.ok(!err && (qs[0].beforeRefDate.length ===
+                qs[0].beforeRefDate.length));
         }
     },
 
@@ -25,9 +25,9 @@ vows.describe("Quotes tests").addBatch({
             quotes.getQuotes(["YHOO"], new Date(), this.callback);
         },
 
-        "check quotes": function (err, quotes) {
-            assert.ok(!err && quotes[0].beforeRefDate.length > 0);
-            assert.ok(!err && quotes[0].afterRefDate.length === 0);
+        "check quotes": function (err, qs) {
+            assert.ok(!err && qs[0].beforeRefDate.length > 0);
+            assert.ok(!err && qs[0].afterRefDate.length === 0);
         }
     }
 
