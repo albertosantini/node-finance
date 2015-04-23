@@ -22,7 +22,7 @@ getLogReturns <- function (symbol, start, end) {
     if (class(prices) == "try-error") {
         assetReturns = NULL
     } else {
-        assetPrice <- hackZeroes(coredata(prices))
+        assetPrice <- hackZeroes(as.numeric(prices))
         assetReturns <- diff(log(assetPrice[1:(length(assetPrice)-1)]))
     }
 
@@ -93,4 +93,3 @@ getOptimalPortfolio <- function (jsonObj) {
 
     return(toJSON(res))
 }
-

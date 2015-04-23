@@ -23,9 +23,9 @@ finance.portfolio.getOptimalPortfolio(params, function (err, res) {
                 " is " + res.optim.solution[i]);
         }
         assert.deepEqual([
-            0.27107002864827245,
-            0.26879557077764216,
-            0.4601344005740855
+            0.27107009426080064,
+            0.26879562565713805,
+            0.46013428008206114
         ], res.optim.solution);
     } else {
         console.log(res.message);
