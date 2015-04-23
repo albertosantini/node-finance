@@ -1,4 +1,5 @@
 2.3.1 / 2015-04-23
+==================
 
 * Update Travis CI to node and iojs.
 * Update grunt-eslint 11.0.0, request 2.55.0, quadprog 1.3.0, rio 1.4.0.
