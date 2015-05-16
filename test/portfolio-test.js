@@ -20,11 +20,12 @@ vows.describe("Portfolio tests").addBatch({
 
         "get the portfolio weights": function (err, topic) {
             if (!err) {
-                assert.deepEqual(topic.optim.solution, [
-                    0.2710700942608004,
-                    0.2687956256571377,
-                    0.4601342800820619
-                ]);
+                assert(Math.abs(0.2710700942608004 - topic.optim.solution[0])
+                    < 1e-15);
+                assert(Math.abs(0.2687956256571377 - topic.optim.solution[1])
+                    < 1e-15);
+                assert(Math.abs(0.4601342800820619 - topic.optim.solution[2])
+                    < 1e-15);
             }
         }
     }
