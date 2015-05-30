@@ -15,8 +15,6 @@ vows.describe("Quotes tests").addBatch({
         "check quotes with ref date in the past": function (err, qs) {
             assert.ok(!err && qs[0].beforeRefDate.length > 0);
             assert.ok(!err && qs[0].afterRefDate.length > 0);
-            assert.ok(!err && (qs[0].beforeRefDate.length ===
-                qs[0].beforeRefDate.length));
         }
     },
 
