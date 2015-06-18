@@ -26,8 +26,10 @@ vows.describe("YAHOO Quotes tests").addBatch({
                     column: 4, // close prices
                     reverse: true // from oldest to newest
                 });
-                assert.equal(prices[0], 19.86); // oldest price
-                assert.equal(prices[prices.length - 1], 23.30); // newest price
+                assert.equal(prices[0],
+                    19.860001); // oldest price
+                assert.equal(prices[prices.length - 1],
+                    23.299999); // newest price
             }
         }
     }
