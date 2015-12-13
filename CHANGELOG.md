@@ -1,4 +1,9 @@
-2.4.1 / 2015-12-13
+2.4.2 / 2015-12-15
+==================
+
+* Fix handling error in nativeGetOptimalPortfolio.
+
+2.4.1 / 2015-12-15
 ==================
 
 * Improve error handling and target return check.
