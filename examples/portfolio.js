@@ -26,6 +26,6 @@ finance.portfolio.getOptimalPortfolio(params, function (err, res) {
         assert(0.26880, res.optim.solution[1].toFixed(5));
         assert(0.46013, res.optim.solution[2].toFixed(5));
     } else {
-        console.log(res.message);
+        console.log(err);
     }
 });
