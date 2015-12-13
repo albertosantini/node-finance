@@ -1,3 +1,8 @@
+2.4.1 / 2015-12-13
+==================
+
+* Improve error handling and target return check.
+
 2.4.0 / 2015-12-10
 ==================
 
