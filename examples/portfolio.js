@@ -22,11 +22,9 @@ finance.portfolio.getOptimalPortfolio(params, function (err, res) {
             console.log("Optimal weight for " + params.prods[i] +
                 " is " + res.optim.solution[i]);
         }
-        assert.deepEqual([
-            0.27107009426080064,
-            0.26879562565713805,
-            0.46013428008206114
-        ], res.optim.solution);
+        assert(0.27107, res.optim.solution[0].toFixed(5));
+        assert(0.26880, res.optim.solution[1].toFixed(5));
+        assert(0.46013, res.optim.solution[2].toFixed(5));
     } else {
         console.log(res.message);
     }
