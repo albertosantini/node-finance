@@ -34,7 +34,7 @@ getReturns <- function (symbol, refDate) {
     mmNow = format(Sys.Date(), "%m")
     yyNow = format(Sys.Date(), "%Y")
 
-    refDate = as.POSIXct(refDate, format="%a %b %d %Y %H:%M:%S", tz="GMT")
+    refDate = as.POSIXct(refDate, tz="GMT")
     ddRef = format(refDate, "%d")
     mmRef = format(refDate, "%m")
     yyRef = format(refDate, "%Y")
