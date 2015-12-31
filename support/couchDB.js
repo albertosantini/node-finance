@@ -1,6 +1,11 @@
+/*eslint camelcase:0, no-unused-vars:0, no-underscore-dangle:0 */
+/*global emit, sum */
+
+"use strict";
+
 // This script installs the design doc. Don't forget to create the database.
 
-var request = require('request');
+var request = require("request");
 
 var cfg = {
     url: "http://user1:pass1@x.y.com",
@@ -17,7 +22,7 @@ function saveDesignDoc(rev) {
         language: "javascript",
 
         views: {
-            'viewByRef': {
+            "viewByRef": {
                 map: function (doc) {
                     if (doc.ref) {
                         emit(doc.ref, 1);
@@ -27,35 +32,35 @@ function saveDesignDoc(rev) {
                     return sum(values);
                 }.toString()
             },
-            'viewByCreatedAt': {
+            "viewByCreatedAt": {
                 map: function (doc) {
                     if (doc.created_at) {
                         emit(doc.created_at, doc);
                     }
                 }.toString()
             },
-            'viewByRet': {
+            "viewByRet": {
                 map: function (doc) {
                     if (doc.ret) {
                         emit(parseFloat(doc.ret), doc);
                     }
                 }.toString()
             },
-            'viewByRisk': {
+            "viewByRisk": {
                 map: function (doc) {
                     if (doc.risk) {
                         emit(parseFloat(doc.risk), doc);
                     }
                 }.toString()
             },
-            'viewByPerf': {
+            "viewByPerf": {
                 map: function (doc) {
                     if (doc.perf) {
                         emit(parseFloat(doc.perf), doc);
                     }
                 }.toString()
             },
-            'viewMostUsedAssets': {
+            "viewMostUsedAssets": {
                 map: function (doc) {
                     if (doc.assets) {
                         doc.assets.forEach(function (asset) {
@@ -120,7 +125,7 @@ function saveDesignDoc(rev) {
     };
 
     request({
-        method: 'PUT',
+        method: "PUT",
         uri: cfg.url + "/" + cfg.db + "/" + cfg.design,
         json: designDoc
     }, function (err, response, doc) {
@@ -133,7 +138,7 @@ function saveDesignDoc(rev) {
 }
 
 request({
-    method: 'GET',
+    method: "GET",
     uri: cfg.url + "/" + cfg.db + "/" + cfg.design,
     json: true
 }, function (err, response, doc) {
