@@ -1,6 +1,3 @@
-/*jslint node:true, sloppy:true, nomen:true, unparam:true */
-/*global emit, sum */
-
 // This script installs the design doc. Don't forget to create the database.
 
 var request = require('request');
@@ -144,5 +141,3 @@ request({
         saveDesignDoc(doc._rev);
     }
 });
-
-
