@@ -1,18 +1,14 @@
 "use strict";
 
-var vows = require("vows"),
-    assert = require("assert"),
+var test = require("tape"),
     rf = require("../lib/risk-free-rate");
 
-vows.describe("Risk free rate tests").addBatch({
-    "get risk free from YAHOO": {
-        topic: function () {
-            rf.getRiskFreeRateFromYahoo(this.callback);
-        },
+test("Risk free rate tests", function (t) {
+    t.plan(1);
 
-        "risk free is a number": function (topic) {
-            assert.ok(isFinite(topic) && topic < 1);
-        }
-    }
+    rf.getRiskFreeRateFromYahoo(function (err, res) {
+        t.ok(!err && isFinite(res) && res < 1,
+            "get risk free from YAHOO");
 
-}).export(module);
+    });
+});

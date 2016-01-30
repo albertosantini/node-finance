@@ -1,32 +1,23 @@
 "use strict";
 
-var vows = require("vows"),
-    assert = require("assert"),
+var test = require("tape"),
     quotes = require("../lib/quotes");
 
-vows.describe("Quotes tests").addBatch({
-    "get quotes with ref date in the past": {
-        topic: function () {
-            quotes.getQuotes(["YHOO"],
-                new Date("Sat Aug 06 2011 12:00:00"),
-                this.callback);
-        },
+test("Quotes tests", function (t) {
+    t.plan(4);
 
-        "check quotes with ref date in the past": function (err, qs) {
-            assert.ok(!err && qs[0].beforeRefDate.length > 0);
-            assert.ok(!err && qs[0].afterRefDate.length > 0);
-        }
-    },
+    quotes.getQuotes(["YHOO"], new Date("Sat Aug 06 2011 12:00:00"),
+        function (err, res) {
+            t.ok(!err && res[0].beforeRefDate.length > 0,
+                "get quotes before ref date in the past");
+            t.ok(!err && res[0].afterRefDate.length > 0,
+                "get quotes after ref date in the past");
+        });
 
-    "get quotes": {
-        topic: function () {
-            quotes.getQuotes(["YHOO"], new Date(), this.callback);
-        },
-
-        "check quotes": function (err, qs) {
-            assert.ok(!err && qs[0].beforeRefDate.length > 0);
-            assert.ok(!err && qs[0].afterRefDate.length === 0);
-        }
-    }
-
-}).export(module);
+    quotes.getQuotes(["YHOO"], new Date(), function (err, res) {
+        t.ok(!err && res[0].beforeRefDate.length > 0,
+            "get quotes before today");
+        t.ok(!err && res[0].afterRefDate.length === 0,
+            "get quotes after today");
+    });
+});

@@ -1,35 +1,17 @@
 "use strict";
 
-var vows = require("vows"),
-    assert = require("assert"),
+var test = require("tape"),
     keyStats = require("../lib/key-statistics");
 
-vows.describe("Key statistics tests").addBatch({
-    "get key statistics": {
-        topic: function () {
-            keyStats.getKeyStatistics({symbol: "IBM"}, this.callback);
-        },
+test("Key statistics tests", function (t) {
+    keyStats.getKeyStatistics({symbol: "IBM"}, function (err, res) {
+        t.plan(3);
 
-        "key statistics count": function (err, topic) {
-            if (err) {
-                throw err;
-            }
-            assert.equal(58, topic.length);
-        },
-
-        "key market cap label": function (err, topic) {
-            if (err) {
-                throw err;
-            }
-            assert.equal("Market Cap (intraday):", topic[0].label);
-        },
-
-        "ibm last split date": function (err, topic) {
-            if (err) {
-                throw err;
-            }
-            assert.equal("May 27, 1999", topic[57].value);
-        }
-    }
-
-}).export(module);
+        t.equal(!err && res.length, 58,
+            "key statistics count");
+        t.equal(!err && res[0].label, "Market Cap (intraday):",
+            "key market cap label");
+        t.equal(!err && res[57].value, "May 27, 1999",
+            "ibm last split date");
+    });
+});

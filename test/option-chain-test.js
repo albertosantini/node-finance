@@ -1,86 +1,38 @@
 "use strict";
 
-var vows = require("vows"),
-    assert = require("assert"),
+var test = require("tape"),
     optionChain = require("../lib/option-chain");
 
-var expiration;
+test("Option Chain tests", function (t) {
+    t.plan(8);
 
-vows.describe("Option Chain tests").addBatch({
-    "get option chain from YAHOO": {
-        topic: function () {
-            optionChain.getOptionChainFromYahoo("IBM", this.callback);
-        },
+    optionChain.getOptionChainFromYahoo("IBM", function (err, res) {
+        var expiration = !err && res.expDate.toString(),
+            date = new Date(expiration),
+            dateStr = date.getFullYear() + "-" +
+                (date.getMonth() + 1) + "-" + date.getDate();
 
-        "strike is a number": function (err, topic) {
-            if (err) {
-                throw err;
-            }
-            assert.ok(isFinite(topic.strike));
-        },
+        t.ok(!err && isFinite(res.strike),
+            "strike is a number");
+        t.ok(!err && expiration !== "Invalid Date",
+            "expire date");
+        t.ok(!err && isFinite(res.calls[0].strike),
+            "first call strike is a number");
+        t.ok(!err && isFinite(res.puts[0].strike),
+            "first put strike is a number");
 
-        "expire date": function (err, topic) {
-            if (err) {
-                throw err;
-            }
-            expiration = topic.expDate.toString();
-            assert.ok(expiration !== "Invalid Date");
-        },
-
-        "first call strike is a number": function (err, topic) {
-            if (err) {
-                throw err;
-            }
-            assert.ok(isFinite(topic.calls[0].strike));
-        },
-
-        "first put strike is a number": function (err, topic) {
-            if (err) {
-                throw err;
-            }
-            assert.ok(isFinite(topic.puts[0].strike));
-        },
-
-        "with expiration date": {
-            topic: function () {
-                var date = new Date(expiration),
-                    dateStr = date.getFullYear() + "-" +
-                        (date.getMonth() + 1) + "-" + date.getDate();
-
-                optionChain.getOptionChainFromYahoo({
-                    symbol: "IBM",
-                    expiration: dateStr
-                }, this.callback);
-            },
-
-            "strike is a number": function (err, topic) {
-                if (err) {
-                    throw err;
-                }
-                assert.ok(isFinite(topic.strike));
-            },
-
-            "expire date": function (err, topic) {
-                if (err) {
-                    throw err;
-                }
-                assert.ok(topic.expDate.toString() !== "Invalid Date");
-            },
-
-            "first call strike is a number": function (err, topic) {
-                if (err) {
-                    throw err;
-                }
-                assert.ok(isFinite(topic.calls[0].strike));
-            },
-
-            "first put strike is a number": function (err, topic) {
-                if (err) {
-                    throw err;
-                }
-                assert.ok(isFinite(topic.puts[0].strike));
-            }
-        }
-    }
-
-}).export(module);
+        optionChain.getOptionChainFromYahoo({
+            symbol: "IBM",
+            expiration: dateStr
+        }, function (err2, res2) {
+            t.ok(!err2 && isFinite(res2.strike),
+                "strike is a number with expiration date");
+            t.ok(!err2 && res2.expDate.toString() !== "Invalid Date",
+                "expire date with expiration date");
+            t.ok(!err2 && isFinite(res2.calls[0].strike),
+                "first call strike is a number with expiration date");
+            t.ok(!err2 && isFinite(res2.puts[0].strike),
+                "first put strike is a number with expiration date");
+        });
+    });
+});

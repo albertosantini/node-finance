@@ -1,37 +1,35 @@
 "use strict";
 
-var vows = require("vows"),
-    assert = require("assert"),
+var test = require("tape"),
     returns = require("../lib/returns");
 
-vows.describe("Returns tests").addBatch({
-    "get returns with ref date in the past": {
-        topic: function () {
-            returns.getReturns(["YHOO", "IBM"],
-                new Date("Sat Aug 06 2011 12:00:00"),
-                this.callback);
-        },
+test("Returns tests", function (t) {
+    t.plan(9);
 
-        "check returns with ref date in the past": function (err, rs) {
-            assert.ok(!err && rs.beforeRefDate.length === 2);
-            assert.ok(!err && rs.beforeRefDate[0].length > 0);
-            assert.ok(!err && rs.beforeRefDate[1].length > 0);
-            assert.ok(!err && rs.afterRefDate[0].length > 0);
-            assert.ok(!err && rs.afterRefDate[1].length > 0);
-        }
-    },
+    returns.getReturns(["YHOO", "IBM"], new Date("Sat Aug 06 2011 12:00:00"),
+        function (err, res) {
 
-    "get returns": {
-        topic: function () {
-            returns.getReturns(["YHOO", "IBM"], new Date(), this.callback);
-        },
+            t.ok(!err && res.beforeRefDate.length === 2,
+                "get returns for two assets before ref date in the past");
+            t.ok(!err && res.beforeRefDate[0].length > 0,
+                "get returns for first assets before ref date in the past");
+            t.ok(!err && res.beforeRefDate[1].length > 0,
+                "get returns for second assets before ref date in the past");
+            t.ok(!err && res.afterRefDate[0].length > 0,
+                "get returns for first assets after ref date in the past");
+            t.ok(!err && res.afterRefDate[1].length > 0,
+                "get returns for second assets after ref date in the past");
+        });
 
-        "check returns": function (err, rs) {
-            assert.ok(!err && rs.beforeRefDate.length === 2);
-            assert.ok(!err && rs.beforeRefDate[0].length > 0);
-            assert.ok(!err && rs.beforeRefDate[1].length > 0);
-            assert.ok(!err && rs.afterRefDate.length === 0);
-        }
-    }
+    returns.getReturns(["YHOO", "IBM"], new Date(), function (err, res) {
+        t.ok(!err && res.beforeRefDate.length === 2,
+            "get returns for two assets before today");
+        t.ok(!err && res.beforeRefDate[0].length > 0,
+            "get returns for first assets before today");
+        t.ok(!err && res.beforeRefDate[1].length > 0,
+            "get returns for second assets before today");
+        t.ok(!err && res.afterRefDate.length === 0,
+            "get returns after today");
+    });
 
-}).export(module);
+});

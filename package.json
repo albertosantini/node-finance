@@ -4,9 +4,9 @@
     "description": "Module for portfolio optimization, prices and options",
     "main": "index",
     "scripts": {
-       "test": "npm run lint && npm run vows",
+       "test": "npm run lint && npm run tape",
        "lint": "eslint index.js lib/**/*.js test/**/*-test.js",
-       "vows": "vows --spec test/**/*-test.js"
+       "tape": "tape test/**/*-test.js"
     },
     "repository": {
         "type": "git",
@@ -31,8 +31,8 @@
         "rio": "~2.4.0"
     },
     "devDependencies": {
-        "eslint": "~2.0.0-beta.2",
+        "eslint": "~2.0.0-beta.3",
         "eslint-config-eslint": "~2.0.0",
-        "vows": "~0.8.1"
+        "tape": "~4.4.0"
     }
 }
