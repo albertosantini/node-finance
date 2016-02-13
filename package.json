@@ -31,8 +31,8 @@
         "rio": "~2.4.0"
     },
     "devDependencies": {
-        "eslint": "~2.0.0-beta.3",
-        "eslint-config-eslint": "~2.0.0",
+        "eslint": "~2.0.0",
+        "eslint-config-eslint": "~3.0.0",
         "tape": "~4.4.0"
     }
 }
