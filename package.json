@@ -26,12 +26,12 @@
     },
     "dependencies": {
         "cheerio": "~0.20.0",
-        "quadprog": "~1.4.0",
+        "quadprog": "~1.5.0",
         "request": "~2.69.0",
         "rio": "~2.4.0"
     },
     "devDependencies": {
-        "eslint": "~2.4.0",
+        "eslint": "^2.5.3",
         "eslint-config-eslint": "~3.0.0",
         "tape": "~4.5.1"
     }
