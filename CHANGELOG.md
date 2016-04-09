@@ -1,3 +1,10 @@
+2.4.5 / 2016-04-09
+==================
+
+* Refactor tests with tape.
+* Use npm scripts.
+* Update deps.
+
 2.4.4 / 2015-12-20
 ==================
 
