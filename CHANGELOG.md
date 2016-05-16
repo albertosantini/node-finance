@@ -1,3 +1,9 @@
+2.4.6 / 2016-05-16
+==================
+
+* Fix put portfolio to PouchDB instance.
+* Update deps.
+
 2.4.5 / 2016-04-09
 ==================
 
