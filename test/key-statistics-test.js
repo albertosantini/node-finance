@@ -11,7 +11,7 @@ test("Key statistics tests", function (t) {
             "key statistics count");
         t.equal(!err && res[0].label, "Market Cap (intraday):",
             "key market cap label");
-        t.equal(!err && res[57].value, "May 27, 1999",
+        t.equal(!err && res[57].value, "27 May 1999",
             "ibm last split date");
     });
 });
