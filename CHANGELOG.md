@@ -1,3 +1,9 @@
+2.5.0 / 2016-07-25
+==================
+
+* Fix for Yahoo Finance new layout using a localized page.
+* Update deps.
+
 2.4.7 / 2016-05-17
 ==================
 
