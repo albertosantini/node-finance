@@ -27,11 +27,11 @@
     "dependencies": {
         "cheerio": "~0.22.0",
         "quadprog": "~1.5.0",
-        "request": "~2.74.0",
+        "request": "~2.75.0",
         "rio": "~2.4.1"
     },
     "devDependencies": {
-        "eslint": "^3.4.0",
+        "eslint": "^3.5.0",
         "eslint-config-eslint": "~3.0.0",
         "tape": "~4.6.0"
     }
