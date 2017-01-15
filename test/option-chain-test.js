@@ -6,7 +6,9 @@ var test = require("tape"),
 test("Option Chain tests", function (t) {
     t.plan(8);
 
-    optionChain.getOptionChainFromYahoo("IBM", function (err, res) {
+    optionChain.getOptionChainFromYahoo({
+        symbol: "IBM",
+    }, function (err, res) {
         var expiration = !err && res.expDate.toString(),
             date = new Date(expiration),
             dateStr = date.getFullYear() + "-" +
