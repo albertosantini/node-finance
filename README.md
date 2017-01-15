@@ -4,8 +4,8 @@ FINANCE
 [![NPM version](https://badge.fury.io/js/finance.png)](http://badge.fury.io/js/finance)
 [![NGN Dependencies](https://david-dm.org/albertosantini/node-finance.png)](https://david-dm.org/albertosantini/node-finance)
 
-This module contains an implementation of Markowitz algorithm for the portfolio
-optimization, a routine for retrieving historical prices from Yahoo,
+This module contains an implementation of Markowitz algorithm for the
+portfolio optimization, a routine for retrieving historical prices from Yahoo,
 statistical information for stocks and a routine for calculating implied
 volatility using Black and Scholes formula.
 
@@ -23,7 +23,7 @@ To install with [npm](http://github.com/isaacs/npm):
 
     npm install finance
 
-Tested with Node.js 5.x, R 3.2.3 and Rserve 1.7.3.
+Tested with Node.js 7.x, R 3.3.2 and Rserve 1.7.3.
 
 Notes
 =====
@@ -59,10 +59,7 @@ to create an uneditable form on front-end side.
 
 **Callback response**
 
-- *stats* array of statistics objects
-
-    - *label* the label of the field.
-    - *value* the value of the field.
+- *keyStatistics* object.
 
 optionchain.getOptionChainFromYahoo(params, callback)
 ---------------------------------
