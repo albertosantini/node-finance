@@ -1,3 +1,9 @@
+3.0.0 / 2017-01-15
+==================
+
+* Use Finance Yahoo "query" to get key statistics, option chain.
+* Update deps.
+
 2.5.0 / 2016-07-25
 ==================
 
