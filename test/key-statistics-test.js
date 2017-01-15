@@ -5,13 +5,13 @@ var test = require("tape"),
 
 test("Key statistics tests", function (t) {
     keyStats.getKeyStatistics({symbol: "IBM"}, function (err, res) {
-        t.plan(3);
+        t.plan(2);
 
-        t.equal(!err && res.length, 58,
+        var ketStatisticsCount = Object.keys(res).length;
+
+        t.equal(!err && ketStatisticsCount, 47,
             "key statistics count");
-        t.equal(!err && res[0].label, "Market Cap (intraday):",
-            "key market cap label");
-        t.equal(!err && res[57].value, "27 May 1999",
-            "ibm last split date");
+        t.equal(!err && res.enterpriseValue !== undefined, true,
+            "key enterprise value");
     });
 });
