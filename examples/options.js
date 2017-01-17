@@ -8,7 +8,7 @@ riskFreeRate.getRiskFreeRateFromYahoo(function (err, res) {
     console.log("Risk Free Rate (3 months): " + res);
 });
 
-optionChain.getOptionChainFromYahoo("IBM", function (err, res) {
+optionChain.getOptionChainFromYahoo({symbol: "IBM"}, function (err, res) {
     console.log("Strike: " + res.strike);
     console.log("Expire Date: " + res.expDateStr);
     console.log("First call: " + util.inspect(res.calls[0]));
