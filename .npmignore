@@ -1,5 +1,4 @@
 .git*
-.jshintrc
 .travis.yml
 examples/
 support/
