@@ -22,8 +22,8 @@ test("YAHOO Quotes tests", function (t) {
                 column: 4, // close prices
                 reverse: true // from oldest to newest
             });
-            t.equal(prices[0], "19.860001", "get oldest price");
-            t.equal(prices[prices.length - 1], "23.299999", "get newest price");
+            t.equal("23.299999", prices[0], "get oldest price");
+            t.equal("19.430000", prices[prices.length - 1], "get newest price");
         }
     });
 });

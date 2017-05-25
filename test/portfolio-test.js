@@ -15,11 +15,11 @@ test("Portfolio tests", function (t) {
     t.plan(3);
 
     finance.portfolio.getOptimalPortfolio(params, function (err, res) {
-        t.equal(!err && res.optim.solution[0].toFixed(5), "0.27107",
+        t.equal(!err && res.optim.solution[0].toFixed(5), "0.25689",
             "get optimal IBM weight");
-        t.equal(!err && res.optim.solution[1].toFixed(5), "0.26880",
+        t.equal(!err && res.optim.solution[1].toFixed(5), "0.24762",
             "get optimal YHOO weight");
-        t.equal(!err && res.optim.solution[2].toFixed(5), "0.46013",
+        t.equal(!err && res.optim.solution[2].toFixed(5), "0.49549",
             "get optimal MSFT weight");
     });
 });
