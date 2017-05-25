@@ -26,11 +26,11 @@
     },
     "dependencies": {
         "quadprog": "~1.5.0",
-        "request": "~2.79.0",
+        "request": "~2.81.0",
         "rio": "~2.4.1"
     },
     "devDependencies": {
-        "eslint": "^3.13.1",
+        "eslint": "^3.19.0",
         "eslint-config-eslint": "~3.0.0",
         "tape": "~4.6.3"
     }
