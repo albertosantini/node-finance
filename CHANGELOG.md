@@ -1,3 +1,9 @@
+3.1.0 / 2017-05-s6
+==================
+
+* Use Finance Yahoo "query" to get quotes history.
+* Update deps.
+
 3.0.0 / 2017-01-15
 ==================
 
