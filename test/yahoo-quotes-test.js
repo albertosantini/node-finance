@@ -4,9 +4,9 @@ var test = require("tape"),
     csv = require("../lib/parse-csv"),
     quotes = require("../lib/yahoo-quotes");
 
-test("YAHOO Quotes tests", function (t) {
+test("Google Quotes tests", function (t) {
     var params = {
-        symbol: "YHOO",
+        symbol: "GOOGL",
         beginDate: new Date(2013, 0, 2), // Jan 2nd, 2013
         endDate: new Date(2013, 3, 6) // Apr 6th, 2013
     };
@@ -22,8 +22,8 @@ test("YAHOO Quotes tests", function (t) {
                 column: 4, // close prices
                 reverse: true // from oldest to newest
             });
-            t.equal("23.299999", prices[0], "get oldest price");
-            t.equal("19.430000", prices[prices.length - 1], "get newest price");
+            t.equal("783.050049", prices[0], "get oldest price");
+            t.equal("723.250061", prices[prices.length - 1], "get newest price");
         }
     });
 });

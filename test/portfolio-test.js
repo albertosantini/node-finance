@@ -5,7 +5,7 @@ var test = require("tape"),
 
 test("Portfolio tests", function (t) {
     var params = {
-        prods: ["IBM", "YHOO", "MSFT"],
+        prods: ["IBM", "GOOGL", "MSFT"],
         referenceDate: "Sat Aug 06 2011 12:00:00",
         targetReturn: undefined,
         lows: [0, 0, 0],
@@ -15,11 +15,11 @@ test("Portfolio tests", function (t) {
     t.plan(3);
 
     finance.portfolio.getOptimalPortfolio(params, function (err, res) {
-        t.equal(!err && res.optim.solution[0].toFixed(5), "0.25689",
+        t.equal(!err && res.optim.solution[0].toFixed(5), "0.50229",
             "get optimal IBM weight");
-        t.equal(!err && res.optim.solution[1].toFixed(5), "0.24762",
-            "get optimal YHOO weight");
-        t.equal(!err && res.optim.solution[2].toFixed(5), "0.49549",
+        t.equal(!err && res.optim.solution[1].toFixed(5), "0.01593",
+            "get optimal GOOGL weight");
+        t.equal(!err && res.optim.solution[2].toFixed(5), "0.48179",
             "get optimal MSFT weight");
     });
 });
