@@ -4,7 +4,7 @@ var finance = require("../lib/finance");
 
 var params = {};
 
-params.prods = ["IBM", "YHOO", "MSFT"];
+params.prods = ["IBM", "GOOGL", "MSFT"];
 params.referenceDate = "Sat Aug 06 2011 12:00:00 GMT+0200";
 params.targetReturn = undefined;
 params.lows = [0, 0, 0];
