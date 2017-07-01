@@ -64,6 +64,8 @@ getOptimalPortfolio <- function (jsonObj) {
     targetReturn <- o$targetReturn # weekly target return
     lows <- as.numeric(o$lows)
     highs <- as.numeric(o$highs) * -1
+    shorts <- ifelse(is.null(o$shorts) || is.na(as.logical(o$shorts)),
+        FALSE, as.logical(o$shorts))
 
     for (asset in symbols) {
         rets = getReturns(asset, referenceDate)
@@ -80,7 +82,7 @@ getOptimalPortfolio <- function (jsonObj) {
     }
 
     res <- list()
-    res$optim <- try(portfolio.optim(x, pm=pm, reslow=lows, reshigh=highs), TRUE)
+    res$optim <- try(portfolio.optim(x, pm=pm, reslow=lows, reshigh=highs, shorts=shorts), TRUE)
     if (class(res$optim) == "try-error") {
         res$message <- res$optim[1]
         res$optim <- list()

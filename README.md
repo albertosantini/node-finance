@@ -122,6 +122,7 @@ Rserve instance, otherwise a native implementation is used.
 - *targetReturn* weekly target return, if undefined, the mean of returns.
 - *lows* vector of constraints.
 - *highs* vector of constraints.
+- *shorts* a logical indicating whether shortsales are allowed.
 
 **Callback response**
 
