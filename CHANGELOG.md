@@ -1,4 +1,13 @@
-3.1.0 / 2017-05-s6
+3.2.0 / 2017-07-01
+==================
+
+* Add shorts boolean to calc short portfolios in getOptimalPortfolio api.
+* Replace Yahoo symbol with Google one in the examples and in the tests due to
+the problems with historical series.
+* Add portfolio R script in the examples.
+* Update deps.
+
+3.1.0 / 2017-05-26
 ==================
 
 * Use Finance Yahoo "query" to get quotes history.
