@@ -67,7 +67,6 @@ getOptimalPortfolio <- function (jsonObj) {
     shorts <- ifelse(is.null(o$shorts) || is.na(as.logical(o$shorts)),
         FALSE, as.logical(o$shorts))
 
-    print(shorts)
     for (asset in symbols) {
         rets = getReturns(asset, referenceDate)
         x <- cbind(x, rets$beforeRefDate)
@@ -97,6 +96,6 @@ getOptimalPortfolio <- function (jsonObj) {
     return(toJSON(res))
 }
 
-ptf <- getOptimalPortfolio('{"prods":["IBM","GOOGL","MSFT"],"referenceDate":"Sat Aug 06 2011 12:00:00 GMT+0200","lows":[-1,-1,-1],"highs":[-1,-1,-1]}')
+ptf <- getOptimalPortfolio('{"prods":["IBM","GOOGL","MSFT"],"referenceDate":"Sat Aug 06 2011 12:00:00 GMT+0200","lows":[0,0,0],"highs":[-1,-1,-1]}')
 fromJSON(ptf)$optim$pw
-fromJSON(ptf)$perf
+# fromJSON(ptf)$perf
