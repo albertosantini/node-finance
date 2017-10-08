@@ -7,12 +7,11 @@ test("Option Chain tests", function (t) {
     t.plan(8);
 
     optionChain.getOptionChainFromYahoo({
-        symbol: "IBM",
+        symbol: "IBM"
     }, function (err, res) {
         var expiration = !err && res.expDate.toString(),
             date = new Date(expiration),
-            dateStr = date.getFullYear() + "-" +
-                (date.getMonth() + 1) + "-" + date.getDate();
+            dateStr = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
 
         t.ok(!err && isFinite(res.strike),
             "strike is a number");

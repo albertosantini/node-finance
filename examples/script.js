@@ -17,4 +17,3 @@ finance.portfolio.getScriptOptimalPortfolio(params, function (err, script) {
         console.log("Failed to load the script:", err);
     }
 });
-
