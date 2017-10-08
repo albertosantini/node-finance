@@ -25,13 +25,13 @@
         "node": ">=6.x"
     },
     "dependencies": {
-        "quadprog": "~1.5.0",
-        "request": "~2.81.0",
-        "rio": "~2.4.1"
+        "quadprog": "^1.5.1",
+        "request": "^2.83.0",
+        "rio": "^2.4.1"
     },
     "devDependencies": {
-        "eslint": "^4.1.1",
+        "eslint": "^4.8.0",
         "eslint-config-eslint": "~3.0.0",
-        "tape": "~4.7.0"
+        "tape": "^4.8.0"
     }
 }
