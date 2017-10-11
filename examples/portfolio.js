@@ -19,9 +19,9 @@ finance.portfolio.getOptimalPortfolio(params, function (err, res) {
         for (i = 0; i < params.prods.length; i += 1) {
             console.log(`Optimal weight for ${params.prods[i]} is ${res.optim.solution[i]}`);
         }
-        assert.equal(0.50229, res.optim.solution[0].toFixed(5));
-        assert.equal(0.01593, res.optim.solution[1].toFixed(5));
-        assert.equal(0.48179, res.optim.solution[2].toFixed(5));
+        assert.equal(0.48948, res.optim.solution[0].toFixed(5));
+        assert.equal(0.02308, res.optim.solution[1].toFixed(5));
+        assert.equal(0.48744, res.optim.solution[2].toFixed(5));
     } else {
         console.log(err);
     }

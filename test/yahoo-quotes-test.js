@@ -22,8 +22,8 @@ test("Google Quotes tests", function (t) {
                 column: 4, // close prices
                 reverse: true // from oldest to newest
             });
-            t.equal("783.050049", prices[0], "get oldest price");
-            t.equal("723.250061", prices[prices.length - 1], "get newest price");
+            t.equal("391.916931", prices[0], "get oldest price");
+            t.equal("367.742737", prices[prices.length - 1], "get newest price");
         }
     });
 });

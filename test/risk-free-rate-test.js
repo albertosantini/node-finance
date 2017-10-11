@@ -7,8 +7,7 @@ test("Risk free rate tests", function (t) {
     t.plan(1);
 
     rf.getRiskFreeRateFromYahoo(function (err, res) {
-        t.ok(!err && isFinite(res) && res < 1,
-            "get risk free from YAHOO");
+        t.ok(!err && isFinite(res), "get risk free from YAHOO");
 
     });
 });
