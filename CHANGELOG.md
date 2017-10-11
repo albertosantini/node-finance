@@ -1,3 +1,10 @@
+3.3.0 / 2017-10-11
+==================
+
+* Fix Yahoo get quotes and tests.
+* Change linting configuration.
+* Update deps.
+
 3.2.0 / 2017-07-01
 ==================
 
