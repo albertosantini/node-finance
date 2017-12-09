@@ -9,7 +9,7 @@ test("Key statistics tests", function (t) {
 
         var ketStatisticsCount = Object.keys(res).length;
 
-        t.equal(!err && ketStatisticsCount, 47,
+        t.equal(!err && ketStatisticsCount, 48,
             "key statistics count");
         t.equal(!err && res.enterpriseValue !== undefined, true,
             "key enterprise value");
