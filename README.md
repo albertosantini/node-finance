@@ -22,7 +22,7 @@ To install with [npm](http://github.com/isaacs/npm):
 
     npm install finance
 
-Tested with Node.js 8.x, R 3.4.1 and Rserve 1.7.3.
+Tested with Node.js 9.x, R 3.4.3 and Rserve 1.7.3.
 
 Notes
 =====
