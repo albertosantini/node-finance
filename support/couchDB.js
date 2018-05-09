@@ -5,7 +5,7 @@
 
 // This script installs the design doc. Don't forget to create the database.
 
-var request = require("request");
+const request = require("../lib/util").request;
 
 var cfg = {
     url: "http://user1:pass1@x.y.com",
@@ -22,7 +22,7 @@ function saveDesignDoc(rev) {
         language: "javascript",
 
         views: {
-            "viewByRef": {
+            viewByRef: {
                 map: function (doc) {
                     if (doc.ref) {
                         emit(doc.ref, 1);
@@ -32,35 +32,35 @@ function saveDesignDoc(rev) {
                     return sum(values);
                 }.toString()
             },
-            "viewByCreatedAt": {
+            viewByCreatedAt: {
                 map: function (doc) {
                     if (doc.created_at) {
                         emit(doc.created_at, doc);
                     }
                 }.toString()
             },
-            "viewByRet": {
+            viewByRet: {
                 map: function (doc) {
                     if (doc.ret) {
                         emit(parseFloat(doc.ret), doc);
                     }
                 }.toString()
             },
-            "viewByRisk": {
+            viewByRisk: {
                 map: function (doc) {
                     if (doc.risk) {
                         emit(parseFloat(doc.risk), doc);
                     }
                 }.toString()
             },
-            "viewByPerf": {
+            viewByPerf: {
                 map: function (doc) {
                     if (doc.perf) {
                         emit(parseFloat(doc.perf), doc);
                     }
                 }.toString()
             },
-            "viewMostUsedAssets": {
+            viewMostUsedAssets: {
                 map: function (doc) {
                     if (doc.assets) {
                         doc.assets.forEach(function (asset) {
@@ -69,8 +69,14 @@ function saveDesignDoc(rev) {
                     }
                 }.toString(),
                 reduce: function (keys, values, rereduce) {
-                    var MAX = 10, tags = {}, lastkey = null, top = [],
-                        k, v, t, n;
+                    var MAX = 10,
+                        tags = {},
+                        lastkey = null,
+                        top = [],
+                        k,
+                        v,
+                        t,
+                        n;
 
                     if (!rereduce) {
                         for (k in keys) {
@@ -126,8 +132,8 @@ function saveDesignDoc(rev) {
 
     request({
         method: "PUT",
-        uri: cfg.url + "/" + cfg.db + "/" + cfg.design,
-        json: designDoc
+        url: `${cfg.url}/${cfg.db}/${cfg.design}`,
+        body: designDoc
     }, function (err, response, doc) {
         if (!err) {
             console.log(doc);
@@ -139,8 +145,7 @@ function saveDesignDoc(rev) {
 
 request({
     method: "GET",
-    uri: cfg.url + "/" + cfg.db + "/" + cfg.design,
-    json: true
+    url: `${cfg.url}/${cfg.db}/${cfg.design}`
 }, function (err, response, doc) {
     if (!err) {
         saveDesignDoc(doc._rev);
