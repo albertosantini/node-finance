@@ -22,7 +22,7 @@
     "author": "Alberto Santini",
     "license": "MIT",
     "engines": {
-        "node": ">=6.x"
+        "node": ">=8.x"
     },
     "dependencies": {
         "https-proxy-agent": "^2.2.1",
