@@ -1,10 +1,11 @@
 "use strict";
 
-var test = require("tape"),
-    csv = require("../lib/parse-csv");
+const test = require("tape");
 
-test("CSV tests", function (t) {
-    var str, res;
+const csv = require("../lib/parse-csv");
+
+test("CSV tests", t => {
+    let str, res;
 
     t.plan(2);
 

@@ -1,17 +1,18 @@
 "use strict";
 
-var test = require("tape"),
-    keyStats = require("../lib/key-statistics");
+const test = require("tape");
 
-test("Key statistics tests", function (t) {
-    keyStats.getKeyStatistics({ symbol: "IBM" }, function (err, res) {
+const keyStats = require("../lib/key-statistics");
+
+test("Key statistics tests", t => {
+    keyStats.getKeyStatistics({ symbol: "IBM" }, (err, res) => {
         t.plan(2);
 
-        var ketStatisticsCount = Object.keys(res).length;
+        const ketStatisticsCount = Object.keys(res).length;
 
         t.equal(!err && ketStatisticsCount, 48,
             "key statistics count");
-        t.equal(!err && res.enterpriseValue !== undefined, true,
+        t.equal(!err && res.enterpriseValue !== undefined, true, // eslint-disable-line no-undefined
             "key enterprise value");
     });
 });

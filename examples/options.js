@@ -1,20 +1,20 @@
 "use strict";
 
-var util = require("util"),
-    riskFreeRate = require("../lib/risk-free-rate"),
-    optionChain = require("../lib/option-chain");
+const util = require("../lib/util");
+const riskFreeRate = require("../lib/risk-free-rate");
+const optionChain = require("../lib/option-chain");
 
-riskFreeRate.getRiskFreeRateFromYahoo(function (err, res) {
+riskFreeRate.getRiskFreeRateFromYahoo((err, res) => {
     if (!err) {
-        console.log(`Risk Free Rate (3 months): ${res}`);
+        util.log(`Risk Free Rate (3 months): ${res}`);
     }
 });
 
-optionChain.getOptionChainFromYahoo({ symbol: "IBM" }, function (err, res) {
+optionChain.getOptionChainFromYahoo({ symbol: "IBM" }, (err, res) => {
     if (!err) {
-        console.log(`Strike: ${res.strike}`);
-        console.log(`Expire Date: ${res.expDateStr}`);
-        console.log(`First call: ${util.inspect(res.calls[0])}`);
-        console.log(`First put: ${util.inspect(res.puts[0])}`);
+        util.log(`Strike: ${res.strike}`);
+        util.log(`Expire Date: ${res.expDateStr}`);
+        util.log(`First call strike: ${res.calls[0].strike}`);
+        util.log(`First put strike: ${res.puts[0].strike}`);
     }
 });

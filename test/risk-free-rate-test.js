@@ -1,13 +1,13 @@
 "use strict";
 
-var test = require("tape"),
-    rf = require("../lib/risk-free-rate");
+const test = require("tape");
 
-test("Risk free rate tests", function (t) {
+const rf = require("../lib/risk-free-rate");
+
+test("Risk free rate tests", t => {
     t.plan(1);
 
-    rf.getRiskFreeRateFromYahoo(function (err, res) {
+    rf.getRiskFreeRateFromYahoo((err, res) => {
         t.ok(!err && isFinite(res), "get risk free from YAHOO");
-
     });
 });

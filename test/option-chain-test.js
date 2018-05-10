@@ -1,15 +1,16 @@
 "use strict";
 
-var test = require("tape"),
-    optionChain = require("../lib/option-chain");
+const test = require("tape");
 
-test("Option Chain tests", function (t) {
+const optionChain = require("../lib/option-chain");
+
+test("Option Chain tests", t => {
     t.plan(8);
 
     optionChain.getOptionChainFromYahoo({
         symbol: "IBM"
-    }, function (err, res) {
-        var expiration = !err && res.expDate.toString(),
+    }, (err, res) => {
+        const expiration = !err && res.expDate.toString(),
             date = new Date(expiration),
             dateStr = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
 
@@ -25,7 +26,7 @@ test("Option Chain tests", function (t) {
         optionChain.getOptionChainFromYahoo({
             symbol: "IBM",
             expiration: dateStr
-        }, function (err2, res2) {
+        }, (err2, res2) => {
             t.ok(!err2 && isFinite(res2.strike),
                 "strike is a number with expiration date");
             t.ok(!err2 && res2.expDate.toString() !== "Invalid Date",

@@ -1,28 +1,27 @@
 "use strict";
 
-var assert = require("assert"),
-    finance = require("../lib/finance");
+const assert = require("assert");
 
-var params = {};
+const finance = require("../lib/finance");
+const util = require("../lib/util");
 
-params.prods = ["IBM", "GOOGL", "MSFT"];
-params.referenceDate = "Sat Aug 06 2011 12:00:00";
-params.targetReturn = undefined;
-params.lows = [0, 0, 0];
-params.highs = [-1, -1, -1];
+const params = {
+    prods: ["IBM", "GOOGL", "MSFT"],
+    referenceDate: "Sat Aug 06 2011 12:00:00",
+    lows: [0, 0, 0],
+    highs: [-1, -1, -1]
+};
 
-finance.portfolio.getOptimalPortfolio(params, function (err, res) {
-    var i;
-
+finance.portfolio.getOptimalPortfolio(params, (err, res) => {
     if (!err) {
-        console.log(`Portfolio assets are the following: ${params.prods}`);
-        for (i = 0; i < params.prods.length; i += 1) {
-            console.log(`Optimal weight for ${params.prods[i]} is ${res.optim.solution[i]}`);
+        util.log(`Portfolio assets are the following: ${params.prods}`);
+        for (let i = 0; i < params.prods.length; i += 1) {
+            util.log(`Optimal weight for ${params.prods[i]} is ${res.optim.solution[i]}`);
         }
-        assert.equal(0.48948, res.optim.solution[0].toFixed(5));
-        assert.equal(0.02308, res.optim.solution[1].toFixed(5));
-        assert.equal(0.48744, res.optim.solution[2].toFixed(5));
+        assert.strictEqual(0.48948, +res.optim.solution[0].toFixed(5));
+        assert.strictEqual(0.02308, +res.optim.solution[1].toFixed(5));
+        assert.strictEqual(0.48744, +res.optim.solution[2].toFixed(5));
     } else {
-        console.log(err);
+        util.log(err);
     }
 });

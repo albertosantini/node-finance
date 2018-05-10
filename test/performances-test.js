@@ -1,10 +1,11 @@
 "use strict";
 
-var test = require("tape"),
-    finance = require("../lib/finance");
+const test = require("tape");
 
-test("Performances tests", function (t) {
-    var x = [
+const finance = require("../lib/finance");
+
+test("Performances tests", t => {
+    const x = [
             [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
             [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
         ],

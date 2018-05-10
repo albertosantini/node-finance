@@ -1,20 +1,21 @@
-/*eslint camelcase:0, no-unused-vars:0, no-underscore-dangle:0 */
-/*global emit, sum */
-
 "use strict";
 
 // This script installs the design doc. Don't forget to create the database.
 
-const request = require("../lib/util").request;
+/* global emit, sum */
 
-var cfg = {
+const util = require("../lib/util");
+
+const request = util.request;
+
+const cfg = {
     url: "http://user1:pass1@x.y.com",
     db: "dbName",
     design: "_design/designDocName"
 };
 
 function saveDesignDoc(rev) {
-    var designDoc = {
+    const designDoc = {
         _id: cfg.design,
 
         _rev: rev,
@@ -23,56 +24,57 @@ function saveDesignDoc(rev) {
 
         views: {
             viewByRef: {
-                map: function (doc) {
+                map: function(doc) {
                     if (doc.ref) {
                         emit(doc.ref, 1);
                     }
                 }.toString(),
-                reduce: function (keys, values, rereduce) {
+                reduce: function(keys, values) {
                     return sum(values);
                 }.toString()
             },
             viewByCreatedAt: {
-                map: function (doc) {
+                map: function(doc) {
                     if (doc.created_at) {
                         emit(doc.created_at, doc);
                     }
                 }.toString()
             },
             viewByRet: {
-                map: function (doc) {
+                map: function(doc) {
                     if (doc.ret) {
                         emit(parseFloat(doc.ret), doc);
                     }
                 }.toString()
             },
             viewByRisk: {
-                map: function (doc) {
+                map: function(doc) {
                     if (doc.risk) {
                         emit(parseFloat(doc.risk), doc);
                     }
                 }.toString()
             },
             viewByPerf: {
-                map: function (doc) {
+                map: function(doc) {
                     if (doc.perf) {
                         emit(parseFloat(doc.perf), doc);
                     }
                 }.toString()
             },
             viewMostUsedAssets: {
-                map: function (doc) {
+                map: function(doc) {
                     if (doc.assets) {
-                        doc.assets.forEach(function (asset) {
+                        doc.assets.forEach(asset => {
                             emit(asset, 1);
                         });
                     }
                 }.toString(),
-                reduce: function (keys, values, rereduce) {
-                    var MAX = 10,
-                        tags = {},
+                reduce: function(keys, values, rereduce) {
+                    const MAX = 10,
+                        top = [];
+
+                    let tags = {},
                         lastkey = null,
-                        top = [],
                         k,
                         v,
                         t,
@@ -112,15 +114,15 @@ function saveDesignDoc(rev) {
                         }
                     }
 
-                    function sort_tags(a, b) {
+                    function sortTags(a, b) {
                         return b[1] - a[1];
                     }
 
-                    top.sort(sort_tags);
+                    top.sort(sortTags);
 
                     for (n = MAX; n < top.length; n += 1) {
                         if (top[n][0] !== lastkey) {
-                            tags[top[n][0]] = undefined;
+                            tags[top[n][0]] = undefined; // eslint-disable-line no-undefined
                         }
                     }
 
@@ -134,11 +136,11 @@ function saveDesignDoc(rev) {
         method: "PUT",
         url: `${cfg.url}/${cfg.db}/${cfg.design}`,
         body: designDoc
-    }, function (err, response, doc) {
+    }, (err, response, doc) => {
         if (!err) {
-            console.log(doc);
+            util.log(doc);
         } else {
-            console.log("Design doc not saved.");
+            util.log("Design doc not saved.");
         }
     });
 }
@@ -146,8 +148,8 @@ function saveDesignDoc(rev) {
 request({
     method: "GET",
     url: `${cfg.url}/${cfg.db}/${cfg.design}`
-}, function (err, response, doc) {
+}, (err, response, doc) => {
     if (!err) {
-        saveDesignDoc(doc._rev);
+        saveDesignDoc(doc._rev); // eslint-disable-line no-underscore-dangle
     }
 });

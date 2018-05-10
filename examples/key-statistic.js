@@ -1,9 +1,10 @@
 "use strict";
 
-var keyStats = require("../lib/key-statistics");
+const util = require("../lib/util");
+const keyStats = require("../lib/key-statistics");
 
-keyStats.getKeyStatistics({ symbol: "IBM" }, function (err, stats) {
+keyStats.getKeyStatistics({ symbol: "IBM" }, (err, stats) => {
     if (!err) {
-        console.log(stats);
+        util.log(stats);
     }
 });
