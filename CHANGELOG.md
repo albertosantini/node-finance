@@ -1,6 +1,7 @@
 4.0.0 / 2018-05-12
 ==================
 
+* Refactor the code in ES2015 fashion.
 * Remove request dep using custom http util client.
 * Update deps.
 
