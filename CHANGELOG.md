@@ -1,3 +1,9 @@
+4.0.0 / 2018-05-12
+==================
+
+* Remove request dep using custom http util client.
+* Update deps.
+
 3.3.1 / 2017-12-09
 ==================
 
