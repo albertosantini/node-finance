@@ -1,3 +1,8 @@
+4.1.0 / 2018-05-13
+==================
+
+* Add basic authorization to request util for crm calls.
+
 4.0.0 / 2018-05-12
 ==================
 
