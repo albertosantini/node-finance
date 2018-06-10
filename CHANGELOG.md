@@ -1,3 +1,9 @@
+4.1.2 / 2018-06-10
+==================
+
+* Check error for returns call.
+* Check properly stats data.
+
 4.1.1 / 2018-06-10
 ==================
 
