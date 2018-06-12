@@ -62,7 +62,7 @@ rules:
     no-caller: "error"
     no-catch-shadow: "error"
     no-confusing-arrow: "error"
-    no-console: "error"
+    no-console: ["error", {allow: ["warn", "error"]}]
     no-delete-var: "error"
     no-else-return: ["error", { allowElseIf: false }]
     no-eval: "error"
