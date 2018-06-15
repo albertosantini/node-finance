@@ -1,3 +1,10 @@
+4.1.3 / 2018-06-15
+==================
+
+* Fix callback error in getView.
+* Refactor putPortfolioOnCRM.
+* Add first crm test.
+
 4.1.2 / 2018-06-10
 ==================
 
