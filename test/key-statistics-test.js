@@ -5,14 +5,16 @@ const test = require("tape");
 const keyStats = require("../lib/key-statistics");
 
 test("Key statistics tests", t => {
+    t.plan(5);
+
     keyStats.getKeyStatistics({ symbol: "IBM" }, (err, res) => {
-        t.plan(2);
+        t.notOk(err, "check error for getting key stats");
+        t.equal(Object.keys(res).length, 48, "get count");
+        t.ok(isFinite(res.enterpriseValue.raw), "get key enterprise value");
+    });
 
-        const ketStatisticsCount = Object.keys(res).length;
-
-        t.equal(!err && ketStatisticsCount, 48,
-            "key statistics count");
-        t.equal(!err && res.enterpriseValue !== undefined, true, // eslint-disable-line no-undefined
-            "key enterprise value");
+    keyStats.getKeyStatistics({ symbol: "IBM190118C00100000" }, (err, res) => {
+        t.equal(err, "Not Found", "not found for unknown symbol");
+        t.notOk(res, "no data for unknown symbol");
     });
 });
