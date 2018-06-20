@@ -9,7 +9,7 @@ test("Key statistics tests", t => {
 
     keyStats.getKeyStatistics({ symbol: "IBM" }, (err, res) => {
         t.notOk(err, "check error for getting key stats");
-        t.equal(Object.keys(res).length, 48, "get count");
+        t.equal(Object.keys(res).length, 50, "get count");
         t.ok(isFinite(res.enterpriseValue.raw), "get key enterprise value");
     });
 
