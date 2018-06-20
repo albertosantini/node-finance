@@ -1,3 +1,9 @@
+4.2.0 / 2018-06-20
+==================
+
+* Use Promise.all to get quotes.
+* Improve error handling and review the tests.
+
 4.1.3 / 2018-06-15
 ==================
 
