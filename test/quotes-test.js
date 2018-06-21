@@ -8,12 +8,12 @@ test("Quotes tests", t => {
     t.plan(10);
 
     quotes.getQuotes(["YHOO"], new Date("Sat Aug 06 2011 12:00:00"), (err, res) => {
-        t.equal(err, "Not Found", "not found for unknown symbol");
+        t.equal(err, "YHOO Not Found", "not found for unknown symbol");
         t.notOk(res, "no data for unknown symbol");
     });
 
     quotes.getQuotes(["YHOO", "IBM"], new Date("Sat Aug 06 2011 12:00:00"), (err, res) => {
-        t.equal(err, "Not Found", "not found for mixed unknown symbol");
+        t.equal(err, "YHOO Not Found", "not found for mixed unknown symbol");
         t.notOk(res, "no data for mixed unknown symbol");
     });
 

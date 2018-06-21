@@ -27,7 +27,7 @@ test("Portfolio tests", t => {
         lows: [0, 0, 0],
         highs: [-1, -1, -1]
     }, (err, res) => {
-        t.equal(err, "Not Found", "not found for unknown symbol");
+        t.equal(err, "YHOO Not Found", "not found for unknown symbol");
         t.notOk(res, "no optimal portfolio due to unknown symbol");
     });
 });
