@@ -6,7 +6,8 @@
     "scripts": {
         "test": "npm run lint && npm run tape",
         "lint": "eslint index.js lib/**/*.js test/**/*-test.js examples/**/*.js",
-        "tape": "tape test/**/*-test.js"
+        "tape": "tape test/**/*-test.js",
+        "debug": "node --inspect-brk -- node_modules/tape/bin/tape test/yahoo-quotes-test.js"
     },
     "repository": {
         "type": "git",
