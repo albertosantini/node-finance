@@ -6,7 +6,7 @@ const csv = require("../lib/parse-csv");
 const quotes = require("../lib/yahoo-quotes");
 
 test("Yahoo Quotes tests", t => {
-    t.plan(5);
+    t.plan(7);
 
     quotes.getHistoricalQuotesFromYahoo({
         symbol: "GOOGL",
@@ -34,4 +34,14 @@ test("Yahoo Quotes tests", t => {
         t.equal(err, "Not Found", "not found for unknown symbol");
         t.notOk(res, "no data for unknown symbol");
     });
+
+    quotes.getHistoricalQuotesFromYahoo({
+        symbol: "CEC.VI",
+        beginDate: new Date(2017, 7, 13), // Aug 13th, 2017
+        endDate: new Date(2018, 5, 23) // Jun 23th, 2018
+    }, (err, symbol, res) => {
+        t.equal(err, "contains missing values", "missing values");
+        t.notOk(res, "no data for missing values");
+    });
+
 });
