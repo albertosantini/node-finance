@@ -1,6 +1,7 @@
 "use strict";
 
-// This script installs the design doc. Don't forget to create the database.
+// This script installs the design doc and the query views.
+// Don't forget to create the database.
 
 /* global emit, sum */
 
@@ -153,3 +154,51 @@ request({
         saveDesignDoc(doc._rev); // eslint-disable-line no-underscore-dangle
     }
 });
+
+// {
+//     "selector": {
+//        "perf": {
+//           "$gt": -42
+//        },
+//        "ref": {
+//           "$gt": "2018/01/01",
+//           "$lt": "2018/12/31"
+//        }
+//     },
+//     "fields": [
+//        "ref",
+//        "perf",
+//        "assets",
+//        "weights"
+//     ],
+//     "limit": 3,
+//     "sort": [
+//        {
+//           "perf": "asc"
+//        }
+//     ]
+//  }
+
+// {
+//     "_id": "_design/0457ad76f1654d82190494ead6b2e33bc34fdabc",
+//     "_rev": "1-4d91c6637fa869bee2e672885961e8a1",
+//     "language": "query",
+//     "views": {
+//       "perf-json-index": {
+//         "map": {
+//           "fields": {
+//             "perf": "asc"
+//           },
+//           "partial_filter_selector": {}
+//         },
+//         "reduce": "_count",
+//         "options": {
+//           "def": {
+//             "fields": [
+//               "perf"
+//             ]
+//           }
+//         }
+//       }
+//     }
+//   }
