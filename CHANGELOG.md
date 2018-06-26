@@ -1,3 +1,10 @@
+4.2.4 / 2018-06-26
+==================
+
+* Fix check null values.
+* Add missing values tests.
+* Update eslint 5.x.
+
 4.2.3 / 2018-06-22
 ==================
 
