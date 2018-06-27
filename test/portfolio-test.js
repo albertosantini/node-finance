@@ -15,9 +15,9 @@ test("Portfolio tests", t => {
         highs: [-1, -1, -1]
     }, (err, res) => {
         t.notOk(err, "check error for getting optimal portfolio");
-        t.equal(res.optim.solution[0].toFixed(5), "0.48948", "get optimal IBM weight");
-        t.equal(res.optim.solution[1].toFixed(5), "0.02308", "get optimal GOOGL weight");
-        t.equal(res.optim.solution[2].toFixed(5), "0.48744", "get optimal MSFT weight");
+        t.equal(res.optim.solution[0].toFixed(5), "0.47201", "get optimal IBM weight");
+        t.equal(res.optim.solution[1].toFixed(5), "0.02359", "get optimal GOOGL weight");
+        t.equal(res.optim.solution[2].toFixed(5), "0.50439", "get optimal MSFT weight");
     });
 
     finance.portfolio.getOptimalPortfolio({
