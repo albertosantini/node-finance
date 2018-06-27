@@ -16,15 +16,21 @@ hackZeroes <- function (x) {
     x
 }
 
-getLogReturns <- function (symbol, start, end) {
+getLogReturns <- function (symbol, start, end, skipPrices=-1) {
     prices = try(get.hist.quote(symbol, start=start, end=end,
         compression="w", quote="Close", quiet=TRUE))
+
+    prices <- tail(prices, skipPrices)
+    # print(prices)
+
     if (class(prices) == "try-error") {
         assetReturns = NULL
     } else {
         assetPrice <- hackZeroes(as.numeric(prices))
         assetReturns <- diff(log(assetPrice[1:(length(assetPrice)-1)]))
     }
+
+    # print(assetReturns)
 
     assetReturns
 }
@@ -41,13 +47,13 @@ getReturns <- function (symbol, refDate) {
 
     start = paste(as.numeric(yyRef) - 2, mmRef, ddRef, sep="-")
     end = paste(yyRef, mmRef, ddRef, sep="-")
-    retsBefore = getLogReturns(symbol, start, end)
+    retsBefore = getLogReturns(symbol, start, end, skipPrices=-1)
 
     retsAfter = NULL
     if (ddNow != ddRef || mmNow != mmRef || yyNow != yyRef) {
         start = paste(yyRef, mmRef, ddRef, sep="-")
         end = paste(yyNow, mmNow, ddNow, sep="-")
-        retsAfter = getLogReturns(symbol, start, end)
+        retsAfter = getLogReturns(symbol, start, end, skipPrices=-2)
     }
 
     list(beforeRefDate=retsBefore, afterRefDate=retsAfter)
@@ -92,6 +98,8 @@ getOptimalPortfolio <- function (jsonObj) {
             res$perf <- cumsum(p %*% res$optim$pw) # performances calc
         }
     }
+
+    # print(res)
 
     return(toJSON(res))
 }

@@ -16,9 +16,12 @@ hackZeroes <- function (x) {
     x
 }
 
-getLogReturns <- function (symbol, start, end) {
+getLogReturns <- function (symbol, start, end, skipPrices=-1) {
     prices = try(get.hist.quote(symbol, start=start, end=end,
         compression="w", quote="Close", quiet=TRUE))
+
+    prices <- tail(prices, skipPrices)
+
     if (class(prices) == "try-error") {
         assetReturns = NULL
     } else {
@@ -41,13 +44,13 @@ getReturns <- function (symbol, refDate) {
 
     start = paste(as.numeric(yyRef) - 2, mmRef, ddRef, sep="-")
     end = paste(yyRef, mmRef, ddRef, sep="-")
-    retsBefore = getLogReturns(symbol, start, end)
+    retsBefore = getLogReturns(symbol, start, end, skipPrices=-1)
 
     retsAfter = NULL
     if (ddNow != ddRef || mmNow != mmRef || yyNow != yyRef) {
         start = paste(yyRef, mmRef, ddRef, sep="-")
         end = paste(yyNow, mmNow, ddNow, sep="-")
-        retsAfter = getLogReturns(symbol, start, end)
+        retsAfter = getLogReturns(symbol, start, end, skipPrices=-2)
     }
 
     list(beforeRefDate=retsBefore, afterRefDate=retsAfter)
