@@ -1,4 +1,4 @@
-4.3.0 / 2018-06-26
+4.3.0 / 2018-06-27
 ==================
 
 * Improve alignment of historical series for debugging between R and js.
