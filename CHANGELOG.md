@@ -1,3 +1,9 @@
+4.3.0 / 2018-06-26
+==================
+
+* Improve alignment of historical series for debugging between R and js.
+* Handle null for target return in the optimization call.
+
 4.2.4 / 2018-06-26
 ==================
 
