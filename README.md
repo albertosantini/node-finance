@@ -289,12 +289,6 @@ crm.queryByDate(params, callback)
 
 It retrieves the portfolios by date sorted by a metric. 
 
-    metric, // 
-    beginRefDate, // yyyy/mm/dd
-    endRefDate, // yyyy/mm/dd
-    limit = 3,
-    sort = "asc" // "asc, "desc"
-    
 **Params**
 
 - *metric* "perf", "risk", "ret".
