@@ -284,6 +284,34 @@ It retrieves a portfolio.
 - *risk* risk of the portofolio.
 - *weights* weights of the portfolio assets.
 
+crm.queryByDate(params, callback)
+---------------------
+
+It retrieves the portfolios by date sorted by a metric. 
+
+    metric, // 
+    beginRefDate, // yyyy/mm/dd
+    endRefDate, // yyyy/mm/dd
+    limit = 3,
+    sort = "asc" // "asc, "desc"
+    
+**Params**
+
+- *metric* "perf", "risk", "ret".
+- *beginRefDate* start date formatted yyyy/mm/dd.
+- *endRefDate* end date formatted yyyy/mm/dd.
+- *limit* maximum number of records.
+- *sort* "asc, "desc".
+
+**Response callback**
+
+- *docs* array of results.
+
+    - *metric* kind of metric.
+    - *ref* reference date.
+    - *assets* array of assets.
+    - *weights* array of weights.
+
 crm.getPortfolioCount(callback)
 ---------------------
 
