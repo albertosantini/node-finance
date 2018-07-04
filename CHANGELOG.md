@@ -1,3 +1,8 @@
+4.4.3 / 2018-07-04
+==================
+
+* Fix again data rows check in most used assets call.
+
 4.4.2 / 2018-07-01
 ==================
 
