@@ -27,12 +27,12 @@
     },
     "dependencies": {
         "https-proxy-agent": "^2.2.1",
-        "quadprog": "^1.6.0",
+        "quadprog": "^1.6.1",
         "rio": "^2.4.1"
     },
     "devDependencies": {
-        "eslint": "^5.0.1",
-        "nock": "^9.3.3",
-        "tape": "^4.9.1"
+        "eslint": "^5.12.1",
+        "nock": "^9.6.1",
+        "tape": "^4.9.2"
     }
 }
