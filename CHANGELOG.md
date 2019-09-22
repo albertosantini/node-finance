@@ -1,4 +1,4 @@
-4.4.3 / 2019-09-22
+4.4.4 / 2019-09-22
 ==================
 
 * Fix risk free asset due to change in Yahoo legacy.
