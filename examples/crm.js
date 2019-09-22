@@ -23,9 +23,9 @@ crm.queryByDate({
     sort: "asc"
 }, (err, res) => {
     if (err) {
-        console.warn(err);
+        console.warn(err); // eslint-disable-line
         return;
     }
 
-    console.warn(res);
+    console.warn(res); //eslint-disable-line
 });

@@ -29,6 +29,7 @@ rules:
     consistent-return: "error"
     curly: ["error", "all"]
     default-case: "error"
+    default-param-last: "error"
     dot-location: ["error", "property"]
     dot-notation: ["error", { allowKeywords: true }]
     eol-last: "error"
@@ -61,9 +62,8 @@ rules:
     no-array-constructor: "error"
     no-buffer-constructor: "error"
     no-caller: "error"
-    no-catch-shadow: "error"
     no-confusing-arrow: "error"
-    no-console: ["error", {allow: ["warn", "error"]}]
+    no-console: "error"
     no-delete-var: "error"
     no-else-return: ["error", { allowElseIf: false }]
     no-eval: "error"
@@ -103,7 +103,7 @@ rules:
         { property: "substr", message: "Use .slice instead of .substr." },
         { object: "assert", property: "equal", message: "Use assert.strictEqual instead of assert.equal." },
         { object: "assert", property: "notEqual", message: "Use assert.notStrictEqual instead of assert.notEqual." },
-        { object: "assert", property: "deepEqual", message: "Use assert.deepStrictEqual instead of assert.deepStrictEqual." },
+        { object: "assert", property: "deepEqual", message: "Use assert.deepStrictEqual instead of assert.deepEqual." },
         { object: "assert", property: "notDeepEqual", message: "Use assert.notDeepStrictEqual instead of assert.notDeepEqual." }
     ]
     no-return-assign: "error"
@@ -112,7 +112,6 @@ rules:
     no-self-compare: "error"
     no-sequences: "error"
     no-shadow: "error"
-    no-shadow-restricted-names: "error"
     no-tabs: "error"
     no-throw-literal: "error"
     no-trailing-spaces: "error"
@@ -133,7 +132,6 @@ rules:
     no-useless-rename: "error"
     no-useless-return: "error"
     no-whitespace-before-property: "error"
-    no-with: "error"
     no-var: "error"
     object-curly-newline: ["error", { "consistent": true, "multiline": true }]
     object-curly-spacing: ["error", "always"]
@@ -162,10 +160,11 @@ rules:
     prefer-rest-params: "error"
     prefer-spread: "error"
     prefer-template: "error"
-    quotes: ["error", "double"]
+    quotes: ["error", "double", {avoidEscape: true}]
     quote-props: ["error", "as-needed"]
     radix: "error"
     require-jsdoc: "off"
+    require-unicode-regexp: "error"
     rest-spread-spacing: "error"
     semi: "error"
     semi-spacing: ["error", {before: false, after: true}]
@@ -188,6 +187,7 @@ rules:
             "String": "string",
             "Number": "number",
             "Boolean": "boolean",
+            "array": "Array",
             "object": "Object",
             "function": "Function"
         }
