@@ -1,7 +1,7 @@
 FINANCE
 =======
-[![Build Status](https://travis-ci.org/albertosantini/node-finance.png)](https://travis-ci.org/albertosantini/node-finance)
-[![NPM version](https://badge.fury.io/js/finance.png)](http://badge.fury.io/js/finance)
+[![NPM version](https://badge.fury.io/js/finance.svg)](http://badge.fury.io/js/finance)
+![](https://github.com/albertosantini/argo/workflows/CI/badge.svg)
 
 This module contains an implementation of Markowitz algorithm for the
 portfolio optimization, a routine for retrieving historical prices from Yahoo,
