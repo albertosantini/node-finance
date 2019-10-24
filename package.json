@@ -26,7 +26,7 @@
         "node": ">=8.x"
     },
     "dependencies": {
-        "https-proxy-agent": "^2.2.3",
+        "https-proxy-agent": "^3.0.1",
         "quadprog": "^1.6.1",
         "rio": "^2.4.1"
     },
