@@ -26,13 +26,13 @@
         "node": ">=8.x"
     },
     "dependencies": {
-        "https-proxy-agent": "^2.2.2",
+        "https-proxy-agent": "^2.2.3",
         "quadprog": "^1.6.1",
         "rio": "^2.4.1"
     },
     "devDependencies": {
-        "eslint": "^6.4.0",
-        "nock": "^11.3.5",
+        "eslint": "^6.5.1",
+        "nock": "^11.6.0",
         "tape": "^4.11.0"
     }
 }
