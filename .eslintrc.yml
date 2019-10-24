@@ -163,7 +163,6 @@ rules:
     quotes: ["error", "double", {avoidEscape: true}]
     quote-props: ["error", "as-needed"]
     radix: "error"
-    require-jsdoc: "off"
     require-unicode-regexp: "error"
     rest-spread-spacing: "error"
     semi: "error"
@@ -181,17 +180,6 @@ rules:
     template-curly-spacing: ["error", "never"]
     template-tag-spacing: "error"
     unicode-bom: "error"
-    valid-jsdoc: ["error", {
-        prefer: { "return": "returns"},
-        preferType: {
-            "String": "string",
-            "Number": "number",
-            "Boolean": "boolean",
-            "array": "Array",
-            "object": "Object",
-            "function": "Function"
-        }
-    }]
     wrap-iife: "error"
     yield-star-spacing: "error"
     yoda: ["error", "never"]
