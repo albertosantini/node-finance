@@ -1,3 +1,8 @@
+5.0.0 / 2021-04-05
+==================
+
+* Remove CRM apis because they were used only in ConPA project.
+
 4.4.4 / 2019-09-22
 ==================
 

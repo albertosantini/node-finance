@@ -1,6 +1,6 @@
 {
     "name": "finance",
-    "version": "4.4.4",
+    "version": "5.0.0",
     "description": "Module for portfolio optimization, prices and options",
     "main": "index",
     "scripts": {
@@ -23,7 +23,7 @@
     "author": "Alberto Santini",
     "license": "MIT",
     "engines": {
-        "node": ">=8.x"
+        "node": ">=12.x"
     },
     "dependencies": {
         "https-proxy-agent": "^5.0.0",
