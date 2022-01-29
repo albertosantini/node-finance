@@ -1,6 +1,6 @@
 {
     "name": "finance",
-    "version": "5.0.0",
+    "version": "5.0.1",
     "description": "Module for portfolio optimization, prices and options",
     "main": "index",
     "scripts": {
